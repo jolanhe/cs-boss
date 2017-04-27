@@ -44,7 +44,7 @@ export default {
             user_id: U.uid || '',
             user_type: U.user_type || '',
             token: U.token || '',
-            chain_id: this.$comm.generateChainID(),
+            chain_id: this.$util.generateChainID(),
             client_device: 'web',
             client_channel: '0',
             client_version: '1.0.0.0',
