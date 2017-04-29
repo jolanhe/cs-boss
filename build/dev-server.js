@@ -3,6 +3,7 @@ require('./check-versions')()
 var config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
+  process.env.API_PATH = JSON.parse(config.dev.env.API_PATH)
 }
 
 var opn = require('opn')

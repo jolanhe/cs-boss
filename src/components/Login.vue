@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
   data () {
     return {
@@ -35,36 +37,38 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState({
+      result: state => state.user.result
+    })
+  },
+  watch: {
+    result () {
+      switch (this.result.code) {
+        case 0:
+          this.$Message.success('提交成功！')
+          break
+        case 1002:
+        case 1003:
+          this.$Message.error(this.result.desc)
+          break
+      }
+    }
+  },
   methods: {
+    ...mapActions([
+      'login'
+    ]),
     handleSubmit (name) {
       this.$refs[name].validate((valid) => {
         if (valid) {
-          const U = {}
-          const params = {
-            user_id: U.uid || '',
-            user_type: U.user_type || '',
-            token: U.token || '',
-            chain_id: this.$util.generateChainID(),
-            client_device: 'web',
-            client_channel: '0',
-            client_version: '1.0.0.0',
-            client_config_version: '0',
-            timestamp: '20170427132348'
-          }
-          const rd = JSON.stringify({
-            phone: this.formInline.user,
-            password: this.$sha1(this.formInline.user + '@user@' + this.formInline.password)
+          const data = JSON.stringify({
+            phone: this.formInline.user.trim(),
+            password: this.$sha1(this.formInline.user.trim() + '@user@' + this.formInline.password)
           })
-          this.$axios.post('/user/login_internal', rd, { params })
-          .then(function (response) {
-            console.log(response)
-          })
-          .catch(function (error) {
-            console.log(error)
-          })
-          this.$Message.success('提交成功!')
+          this.login(data)
         } else {
-          this.$Message.error('表单验证失败!')
+          this.$Message.error('表单验证失败！')
         }
       })
     }
