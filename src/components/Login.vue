@@ -11,7 +11,10 @@
       </Input>
     </Form-item>
     <Form-item>
-      <Button type="primary" @click="handleSubmit('formInline')">登录</Button>
+      <Button type="primary" :loading="btnloading" @click="handleSubmit('formInline')">
+        <span v-if="!btnloading">登录</span>
+        <span v-else>登录中...</span>
+      </Button>
     </Form-item>
   </Form>
 </template>
@@ -34,7 +37,8 @@ export default {
           { required: true, message: '请填写密码', trigger: 'blur' },
           { type: 'string', min: 6, message: '密码长度不能小于6位', trigger: 'blur' }
         ]
-      }
+      },
+      btnloading: false
     }
   },
   computed: {
@@ -44,14 +48,14 @@ export default {
   },
   watch: {
     result () {
-      switch (this.result.code) {
+      const r = this.result
+      switch (typeof r.code !== 'undefined' ? r.code : r) {
         case 0:
           this.$Message.success('提交成功！')
           break
-        case 1002:
-        case 1003:
-          this.$Message.error(this.result.desc)
-          break
+        default:
+          this.$Message.error(r.desc || r)
+          this.btnloading = false
       }
     }
   },
@@ -60,18 +64,24 @@ export default {
       'login'
     ]),
     handleSubmit (name) {
+      this.btnloading = true
       this.$refs[name].validate((valid) => {
         if (valid) {
-          const data = JSON.stringify({
+          const identity = JSON.stringify({
             phone: this.formInline.user.trim(),
             password: this.$sha1(this.formInline.user.trim() + '@user@' + this.formInline.password)
           })
-          this.login(data)
+          this.login(identity)
         } else {
           this.$Message.error('表单验证失败！')
+          this.btnloading = false
         }
       })
     }
   }
 }
 </script>
+
+<style scoped>
+  button { min-width: 95px; }
+</style>

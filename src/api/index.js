@@ -3,11 +3,11 @@ import util from '../assets/util'
 
 export default {
   user,
-  params (user) {
+  params (userProps) {
     return {
-      user_id: user.uid || '',
-      user_type: user.user_type || '',
-      token: user.token || '',
+      user_id: userProps.uid || '',
+      user_type: userProps.user_type || '',
+      token: userProps.token || '',
       chain_id: util.generateChainID(),
       client_device: 'web',
       client_channel: '0',
