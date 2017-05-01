@@ -5,7 +5,7 @@ import * as types from '../mutation-types'
 export default {
   state: {
     props: JSON.parse(localStorage.getItem('csu')) || {},
-    // 存储 http 响应结果，或请求失败的网络错误信息
+    // 存储 http 响应结果，或请求失败的（网络）错误信息
     result: {}
   },
   mutations: {
@@ -15,7 +15,6 @@ export default {
       localStorage.clear()
       localStorage.setItem('csu', JSON.stringify(response))
     },
-    // 处理 http 响应结果的非 0 错误，或请求失败的网络错误
     [types.LOGIN_FAILED] (state, error) {
       state.result = error
     }

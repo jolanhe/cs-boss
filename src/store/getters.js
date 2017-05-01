@@ -1,5 +1,3 @@
 export default {
-  userProps (state) {
-    return state.user.props
-  }
+  userProps: state => state.user.props
 }
