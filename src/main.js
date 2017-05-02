@@ -6,7 +6,6 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import api from './api'
-import sha1 from 'sha1'
 import util from './assets/util'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
@@ -22,7 +21,6 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 
 Object.defineProperty(Vue.prototype, '$axios', { value: axios })
 Object.defineProperty(Vue.prototype, '$api', { value: api })
-Object.defineProperty(Vue.prototype, '$sha1', { value: sha1 })
 Object.defineProperty(Vue.prototype, '$util', { value: util })
 
 /* eslint-disable no-new */

@@ -1,4 +1,5 @@
 import md5 from 'md5'
+import sha1 from 'sha1'
 
 /**
  * prototype extend
@@ -63,5 +64,6 @@ export default {
   },
   getTimestamp (fmt) {
     return new Date().format(fmt)
-  }
+  },
+  sha1
 }

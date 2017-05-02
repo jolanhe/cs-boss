@@ -37,14 +37,14 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  // 判断进入的路由是否有 exclude 属性，没有则表明需要验证登录状态
+  // 判断进入的路由是否有 meta.exclude 属性，没有则表明需要验证登录状态
   if (!to.matched.some(record => record.meta.exclude)) {
-    !store.getters.userProps.token
-      ? next({
+    store.getters.userProps.token
+      ? next()
+      : next({
         path: '/login',
         query: { redirect: to.fullPath }
       })
-      : next()
   } else {
     next()
   }
