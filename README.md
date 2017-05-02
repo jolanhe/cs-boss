@@ -1,4 +1,4 @@
-# cs_boss
+# cs-boss
 
 > A Vue.js project
 
