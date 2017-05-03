@@ -1,12 +1,12 @@
 <template>
-  <Form ref="formInline" :model="formInline" :rules="ruleInline">
+  <Form ref="formInline" :model="formInline" :rules="ruleInline" class="login-wrap">
     <Form-item prop="user">
-      <Input type="text" v-model="formInline.user" placeholder="Username">
-      <Icon type="ios-person-outline" slot="prepend"></Icon>
+      <Input type="text" v-model="formInline.user" placeholder="手机号">
+      <Icon type="iphone" slot="prepend"></Icon>
       </Input>
     </Form-item>
     <Form-item prop="password">
-      <Input type="password" v-model="formInline.password" placeholder="Password">
+      <Input type="password" v-model="formInline.password" placeholder="密码">
       <Icon type="ios-locked-outline" slot="prepend"></Icon>
       </Input>
     </Form-item>
@@ -36,18 +36,9 @@ export default {
         code: ''
       },
       ruleInline: {
-        user: [
-          { required: true, message: '请填写用户名', trigger: 'blur' },
-          { type: 'string', pattern: /^1\d{10}$/, message: '用户名必须是11位数的手机号', trigger: 'blur' }
-        ],
-        password: [
-          { required: true, message: '请填写密码', trigger: 'blur' },
-          { type: 'string', min: 6, message: '密码长度不能小于6位', trigger: 'blur' }
-        ],
-        code: [
-          { required: true, message: '请填写暗号', trigger: 'blur' },
-          { type: 'string', pattern: /^(\d{6}|\d{8})$/, message: '暗号必须是6或8位数字', trigger: 'blur' }
-        ]
+        user: this.$utils.rules.phone,
+        password: this.$utils.rules.password,
+        code: this.$utils.rules.code
       },
       btnloading: false
     }
@@ -85,10 +76,11 @@ export default {
       this.btnloading = true
       this.$refs[name].validate((valid) => {
         if (valid) {
+          const f = this.formInline
           const identity = JSON.stringify({
-            account: this.formInline.user.trim(),
-            password: this.$util.sha1(this.formInline.user.trim() + '@user@' + this.formInline.password),
-            code: this.formInline.code
+            account: f.user.trim(),
+            password: this.$utils.sha1(f.user.trim() + '@user@' + f.password),
+            code: f.code
           })
           this.login(identity)
         } else {
@@ -101,7 +93,8 @@ export default {
 }
 </script>
 
-<style scoped>
-  form { width: 280px; margin: 0 auto;}
-  .ivu-input-group-prepend { min-width: 25px;}
+<style>
+  .login-wrap { width: 280px; margin: 0 auto;}
+  .login-wrap .ivu-input-group-prepend { min-width: 28px;}
+  .login-wrap .ivu-icon { font-size: 16px;}
 </style>

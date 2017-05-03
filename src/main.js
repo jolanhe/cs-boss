@@ -6,7 +6,7 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import api from './api'
-import util from './assets/util'
+import utils from './assets/utils'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
@@ -21,7 +21,7 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 
 Object.defineProperty(Vue.prototype, '$axios', { value: axios })
 Object.defineProperty(Vue.prototype, '$api', { value: api })
-Object.defineProperty(Vue.prototype, '$util', { value: util })
+Object.defineProperty(Vue.prototype, '$utils', { value: utils })
 
 /* eslint-disable no-new */
 new Vue({

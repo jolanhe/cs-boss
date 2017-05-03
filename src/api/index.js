@@ -1,5 +1,5 @@
 import user from './user'
-import util from '../assets/util'
+import utils from '../assets/utils'
 
 export default {
   user,
@@ -7,8 +7,8 @@ export default {
     return {
       uid: user.uid || '',
       token: user.token || '',
-      chain: util.generateChainID(),
-      timestamp: util.getTimestamp('YYYYMMDDhhmmss')
+      chain: utils.generateChainID(),
+      timestamp: utils.getTimestamp('YYYYMMDDhhmmss')
     }
   }
 }
