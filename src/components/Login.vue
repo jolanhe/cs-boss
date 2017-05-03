@@ -67,7 +67,7 @@ export default {
           // 跳转页面前判断 URL 查询参数中是否有 redirect，无则跳到首页，有则跳到 redirect 的路径
           const redirect = this.$route.query.redirect
           !redirect
-            ? this.$router.replace({name: 'index'})
+            ? this.$router.replace({name: 'Home'})
             : this.$router.replace({path: redirect})
 
           break

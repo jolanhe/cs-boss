@@ -3,8 +3,8 @@ import Router from 'vue-router'
 import store from '../store'
 import NotFound from '@/components/404'
 import Hello from '@/components/Hello'
-import login from '../views/login'
-import index from '../views'
+import Login from '@/components/Login'
+import Home from '@/components/Home'
 
 Vue.use(Router)
 
@@ -18,13 +18,13 @@ const router = new Router({
     },
     {
       path: '/',
-      name: 'index',
-      component: index
+      name: 'Home',
+      component: Home
     },
     {
       path: '/login',
-      name: 'login',
-      component: login,
+      name: 'Login',
+      component: Login,
       // login 路由增加 meta 字段表明除此之外的所有路由都需要验证
       meta: { exclude: true }
     },
