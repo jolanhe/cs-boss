@@ -1,5 +1,5 @@
 <template>
-  <Menu mode="horizontal" :theme="theme" active-name="1">
+  <Menu mode="horizontal" theme="primary" active-name="1">
     <div class="logo shrink0"></div>
     <div class="w100">
       <Menu-item name="1">
@@ -21,7 +21,8 @@
     </div>
     <Dropdown class="shrink0">
         <a href="javascript:void(0)">
-            下拉菜单
+            <Icon type="person"></Icon>&nbsp;
+            Jolan He
             <Icon type="ios-arrow-down"></Icon>
         </a>
         <Dropdown-menu slot="list">
@@ -39,9 +40,7 @@
 export default {
   name: 'MainNav',
   data () {
-    return {
-      theme: 'primary'
-    }
+    return {}
   }
 }
 </script>

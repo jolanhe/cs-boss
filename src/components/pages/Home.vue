@@ -12,10 +12,7 @@
 <script>
 export default {
   data () {
-    return {
-      msg: 'Home',
-      theme: 'primary'
-    }
+    return {}
   }
 }
 </script>
