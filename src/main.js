@@ -9,6 +9,7 @@ import api from './api'
 import utils from './assets/utils'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
+import './assets/css/main.sass'
 
 iView.Message.config({ duration: 2.2 })
 Vue.use(iView)

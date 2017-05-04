@@ -1,10 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from '../store'
-import NotFound from '@/components/404'
-import Hello from '@/components/Hello'
-import Login from '@/components/Login'
-import Home from '@/components/Home'
+import CompLib from '@/components'
 
 Vue.use(Router)
 
@@ -14,24 +11,32 @@ const router = new Router({
     {
       path: '*',
       name: 'NotFound',
-      component: NotFound
+      component: CompLib.pages.NotFound
     },
     {
       path: '/',
-      name: 'Home',
-      component: Home
+      component: CompLib.pages.Home,
+      children: [
+        {
+          path: '',
+          components: {
+            mainNav: CompLib.navigation.MainNav,
+            sideNav: CompLib.navigation.SideNav
+          }
+        }
+      ]
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login,
+      component: CompLib.pages.Login,
       // login 路由增加 meta 字段表明除此之外的所有路由都需要验证
       meta: { exclude: true }
     },
     {
       path: '/hello',
       name: 'Hello',
-      component: Hello
+      component: CompLib.pages.Hello
     }
   ]
 })
