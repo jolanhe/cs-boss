@@ -21,7 +21,7 @@
     </div>
     <Dropdown class="shrink0">
         <a href="javascript:void(0)">
-            <Icon type="person"></Icon>&nbsp;
+            <Icon type="person" class="i-marg"></Icon>
             Jolan He
             <Icon type="ios-arrow-down"></Icon>
         </a>
@@ -30,17 +30,54 @@
             <Dropdown-item>炸酱面</Dropdown-item>
             <Dropdown-item disabled>豆汁儿</Dropdown-item>
             <Dropdown-item>冰糖葫芦</Dropdown-item>
-            <Dropdown-item divided>退出登录</Dropdown-item>
+            <Dropdown-item divided :disabled="exiting" @click.native="handleLogout">退出登录</Dropdown-item>
         </Dropdown-menu>
     </Dropdown>
   </Menu>
 </template>
 
 <script>
+import { mapState, mapGetters, mapActions } from 'vuex'
 export default {
   name: 'MainNav',
   data () {
-    return {}
+    return {
+      exiting: false
+    }
+  },
+  computed: {
+    ...mapState({
+      result: state => state.user.result
+    }),
+    ...mapGetters([
+      'userProps'
+    ])
+  },
+  watch: {
+    result () {
+      const r = this.result
+      switch (typeof r.status_code !== 'undefined' ? r.status_code : r) {
+        case 0:
+          this.$Message.success('退出成功！')
+          this.$router.replace({name: 'Login'})
+          break
+        default:
+          this.$Message.error(r.status_txt || r)
+          this.exiting = false
+      }
+    }
+  },
+  methods: {
+    ...mapActions([
+      'logout'
+    ]),
+    handleLogout () {
+      this.exiting = true
+      this.logout(JSON.stringify({
+        account: this.userProps.account,
+        token: this.userProps.token
+      }))
+    }
   }
 }
 </script>

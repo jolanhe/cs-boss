@@ -9,7 +9,8 @@ export default {
     result: {}
   },
   mutations: {
-    [types.LOGIN_SUCCESS] (state, data) {
+    // 登录 mutation
+    [types.LOGIN] (state, data) {
       state.props = data.data
       state.result = {
         status_code: data.status_code,
@@ -20,18 +21,43 @@ export default {
     },
     [types.LOGIN_FAILED] (state, error) {
       state.result = error
+    },
+    // 退出 mutation
+    [types.LOGOUT] (state, data) {
+      state.props = {}
+      state.result = {
+        status_code: data.status_code,
+        status_txt: data.status_txt
+      }
+      localStorage.clear()
+    },
+    [types.LOGOUT_FAILED] (state, error) {
+      state.result = error
     }
   },
   actions: {
-    login ({ commit, state }, identity) {
-      axios.all([api.user.login(identity, api.params(state.props))])
+    // 登录 action
+    login ({ commit, state }, account) {
+      axios.all([api.user.login(account, api.params(state.props))])
       .then(axios.spread(function ({ data }) {
         data.status_code === 0
-          ? commit(types.LOGIN_SUCCESS, data)
+          ? commit(types.LOGIN, data)
           : commit(types.LOGIN_FAILED, data)
       }))
       .catch(function (reason) {
         commit(types.LOGIN_FAILED, reason)
+      })
+    },
+    // 退出 action
+    logout ({ commit, state }, account) {
+      axios.all([api.user.logout(account, api.params(state.props))])
+      .then(axios.spread(function ({ data }) {
+        data.status_code === 0
+          ? commit(types.LOGOUT, data)
+          : commit(types.LOGOUT_FAILED, data)
+      }))
+      .catch(function (reason) {
+        commit(types.LOGOUT_FAILED, reason)
       })
     }
   }

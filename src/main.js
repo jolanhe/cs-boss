@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import { mapState } from 'vuex'
 import axios from 'axios'
 import api from './api'
 import utils from './assets/utils'
@@ -30,5 +31,21 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  computed: {
+    ...mapState({
+      commResult: state => state.common.result
+    })
+  },
+  watch: {
+    commResult () {
+      const r = this.result
+      switch (typeof r.status_code !== 'undefined' ? r.status_code : r) {
+        case 0: break
+        case 1004: break
+        default:
+          iView.$Message.error(r.status_txt || r)
+      }
+    }
+  }
 })

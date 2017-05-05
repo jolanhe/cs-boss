@@ -31,9 +31,9 @@ export default {
   data () {
     return {
       formInline: {
-        user: '',
-        password: '',
-        code: ''
+        user: '18565707791',
+        password: 'abc123',
+        code: '123123'
       },
       ruleInline: {
         user: this.$utils.rules.phone,
@@ -77,12 +77,12 @@ export default {
       this.$refs[name].validate((valid) => {
         if (valid) {
           const f = this.formInline
-          const identity = JSON.stringify({
+          const account = JSON.stringify({
             account: f.user.trim(),
             password: this.$utils.sha1(f.user.trim() + '@user@' + f.password),
             code: f.code
           })
-          this.login(identity)
+          this.login(account)
         } else {
           this.$Message.error('输入信息格式有误！')
           this.btnloading = false
@@ -94,7 +94,7 @@ export default {
 </script>
 
 <style>
-.login-wrap { width: 280px; margin: 160px auto 0;}
+.login-wrap { width: 280px; margin: 0 auto; padding-top: 160px;}
 .login-wrap .ivu-input-group-prepend { min-width: 28px;}
 .login-wrap .ivu-icon { font-size: 16px;}
 </style>
