@@ -1,5 +1,5 @@
 <template>
-  <Menu mode="horizontal" theme="primary" active-name="1">
+  <Menu mode="horizontal" theme="dark" active-name="1">
     <div class="logo shrink0"></div>
     <div class="w100">
       <Menu-item name="1">
@@ -59,10 +59,10 @@ export default {
       switch (typeof r.status_code !== 'undefined' ? r.status_code : r) {
         case 0:
           this.$Message.success('退出成功！')
-          this.$router.replace({name: 'Login'})
+          this.$router.push({name: 'Login'})
           break
         default:
-          this.$Message.error(r.status_txt || r)
+          this.$store.commit('ERROR_RESPONSE_HANDLER', r)
           this.exiting = false
       }
     }

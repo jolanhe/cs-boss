@@ -5,12 +5,12 @@ import * as types from '../mutation-types'
 export default {
   state: {
     props: JSON.parse(localStorage.getItem('csu')) || {},
-    // 存储 http 请求的响应结果，或请求失败的（网络）错误信息
+    // 存储 http 请求的响应结果，或作为请求失败的（网络）错误信息的中转
     result: {}
   },
   mutations: {
     // 登录 mutation
-    [types.LOGIN] (state, data) {
+    [types.LOGIN_SUCCESS] (state, data) {
       state.props = data.data
       state.result = {
         status_code: data.status_code,
@@ -23,7 +23,7 @@ export default {
       state.result = error
     },
     // 退出 mutation
-    [types.LOGOUT] (state, data) {
+    [types.LOGOUT_SUCCESS] (state, data) {
       state.props = {}
       state.result = {
         status_code: data.status_code,
@@ -33,6 +33,11 @@ export default {
     },
     [types.LOGOUT_FAILED] (state, error) {
       state.result = error
+    },
+    // 清楚登录状态 mutation
+    [types.CLEAR_LOGIN_STATUS] (state) {
+      state.props = {}
+      localStorage.clear()
     }
   },
   actions: {
@@ -41,7 +46,7 @@ export default {
       axios.all([api.user.login(account, api.params(state.props))])
       .then(axios.spread(function ({ data }) {
         data.status_code === 0
-          ? commit(types.LOGIN, data)
+          ? commit(types.LOGIN_SUCCESS, data)
           : commit(types.LOGIN_FAILED, data)
       }))
       .catch(function (reason) {
@@ -53,7 +58,7 @@ export default {
       axios.all([api.user.logout(account, api.params(state.props))])
       .then(axios.spread(function ({ data }) {
         data.status_code === 0
-          ? commit(types.LOGOUT, data)
+          ? commit(types.LOGOUT_SUCCESS, data)
           : commit(types.LOGOUT_FAILED, data)
       }))
       .catch(function (reason) {

@@ -4,7 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import { mapState } from 'vuex'
 import axios from 'axios'
 import api from './api'
 import utils from './assets/utils'
@@ -12,14 +11,30 @@ import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import './assets/css/main.scss'
 
+Vue.config.productionTip = false
+
 iView.Message.config({ duration: 2.2 })
 Vue.use(iView)
-Vue.config.productionTip = false
 
 if (process.env.NODE_ENV !== 'production') {
   axios.defaults.baseURL = window.location.protocol + process.env.API_PATH
 }
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8'
+// axios 拦截器，设置进度条
+axios.interceptors.request.use(function (config) {
+  iView.LoadingBar.start()
+  return config
+}, function (error) {
+  iView.LoadingBar.error()
+  return Promise.reject(error)
+})
+axios.interceptors.response.use(function (response) {
+  iView.LoadingBar.finish()
+  return response
+}, function (error) {
+  iView.LoadingBar.error()
+  return Promise.reject(error)
+})
 
 Object.defineProperty(Vue.prototype, '$axios', { value: axios })
 Object.defineProperty(Vue.prototype, '$api', { value: api })
@@ -31,21 +46,5 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: { App },
-  computed: {
-    ...mapState({
-      commResult: state => state.common.result
-    })
-  },
-  watch: {
-    commResult () {
-      const r = this.result
-      switch (typeof r.status_code !== 'undefined' ? r.status_code : r) {
-        case 0: break
-        case 1004: break
-        default:
-          iView.$Message.error(r.status_txt || r)
-      }
-    }
-  }
+  components: { App }
 })

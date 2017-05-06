@@ -26,13 +26,12 @@
 }
 
 .main-nav {
-  &.ivu-menu-primary.ivu-menu-horizontal {
+  &.ivu-menu-dark.ivu-menu-horizontal {
     .ivu-menu-item {
       transition: color .2s ease;
     }
     .ivu-menu-item:hover {
       background: none;
-      color: rgba(255, 255, 255, .8);
       transition-duration: .1s;
     }
     .ivu-menu-item-active {
@@ -43,9 +42,9 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 91%;
-      height: 67%;
-      background: #288ff2;
+      width: 104px;
+      height: 38px;
+      background: #383F51;
       border-radius: 5px;
       transform: translate(-50%, -50%);
       z-index: -1;
@@ -73,4 +72,24 @@
 
 .i-marg {
   margin-right: 6px;
+}
+
+.ivu-loading-bar-inner {
+  position: relative;
+  transition: width 0.4s ease;
+}
+
+.ivu-loading-bar-inner:not(.ivu-loading-bar-inner-failed-color-error)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 90px;
+  height: 100%;
+  box-shadow: 0 0 10px #5cadff, 0 0 5px #5cadff, 0 0 10px #5cadff, 0 0 5px #5cadff;
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+.ivu-loading-bar-inner-color-primary {
+  box-shadow: 0 0 10px rgba(92,173,255,0.7);
 }

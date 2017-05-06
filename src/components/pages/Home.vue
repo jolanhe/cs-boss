@@ -13,6 +13,26 @@
 export default {
   data () {
     return {}
+  },
+  computed: {
+    result () {
+      return this.$store.state.common.result
+    }
+  },
+  watch: {
+    result () {
+      const r = this.result
+      switch (typeof r.status_code !== 'undefined' ? r.status_code : r) {
+        case 0: break
+        case 1004:
+          this.$Message.error(r.status_txt || r)
+          this.$store.commit('CLEAR_LOGIN_STATUS')
+          this.$router.push({name: 'Login'})
+          break
+        default:
+          this.$Message.error(r.status_txt || r)
+      }
+    }
   }
 }
 </script>
