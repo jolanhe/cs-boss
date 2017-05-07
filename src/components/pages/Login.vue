@@ -1,27 +1,31 @@
 <template>
-  <Form ref="formInline" :model="formInline" :rules="ruleInline" class="login-wrap">
-    <Form-item prop="user">
-      <Input type="text" v-model="formInline.user" placeholder="手机号">
-      <Icon type="iphone" slot="prepend"></Icon>
-      </Input>
-    </Form-item>
-    <Form-item prop="password">
-      <Input type="password" v-model="formInline.password" placeholder="密码">
-      <Icon type="ios-locked-outline" slot="prepend"></Icon>
-      </Input>
-    </Form-item>
-    <Form-item prop="code">
-      <Input type="text" v-model="formInline.code" placeholder="暗号">
-      <Icon type="ios-barcode" slot="prepend"></Icon>
-      </Input>
-    </Form-item>
-    <Form-item>
-      <Button type="primary" :loading="btnloading" @click="handleSubmit('formInline')" long>
-        <span v-if="!btnloading">登录</span>
-        <span v-else>登录中...</span>
-      </Button>
-    </Form-item>
-  </Form>
+  <div class="login-wrap mui-flex verticent horicent">
+    <div class="hero shrink0">Business & Operation Support System</div>
+    <Form ref="formInline" :model="formInline" :rules="ruleInline" class="login shrink0">
+      <h1>BOSS</h1>
+      <Form-item prop="user">
+        <Input type="text" v-model="formInline.user" size="large" placeholder="手机号">
+        <Icon type="iphone" slot="prepend"></Icon>
+        </Input>
+      </Form-item>
+      <Form-item prop="password">
+        <Input type="password" v-model="formInline.password" size="large" placeholder="密码">
+        <Icon type="ios-locked-outline" slot="prepend"></Icon>
+        </Input>
+      </Form-item>
+      <Form-item prop="code">
+        <Input type="text" v-model="formInline.code" size="large" placeholder="暗号">
+        <Icon type="ios-barcode" slot="prepend"></Icon>
+        </Input>
+      </Form-item>
+      <Form-item>
+        <Button type="primary" :loading="btnloading" @click="handleSubmit('formInline')" size="large" long>
+          <span v-if="!btnloading">登录</span>
+          <span v-else>登录中...</span>
+        </Button>
+      </Form-item>
+    </Form>
+  </div>
 </template>
 
 <script>
@@ -92,9 +96,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.login-wrap { width: 280px; margin: 0 auto; padding-top: 160px;}
-.login-wrap .ivu-input-group-prepend { min-width: 28px;}
-.login-wrap .ivu-icon { font-size: 16px;}
-</style>

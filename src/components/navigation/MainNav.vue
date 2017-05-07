@@ -38,6 +38,7 @@
 
 <script>
 import { mapState, mapGetters, mapActions } from 'vuex'
+
 export default {
   name: 'MainNav',
   data () {
@@ -72,6 +73,9 @@ export default {
       'logout'
     ]),
     handleLogout () {
+      if (this.exiting) {
+        return
+      }
       this.exiting = true
       this.logout(JSON.stringify({
         account: this.userProps.account,
