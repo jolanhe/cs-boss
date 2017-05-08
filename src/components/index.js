@@ -2,8 +2,13 @@ import Home from '@/components/pages/Home'
 import Login from '@/components/pages/Login'
 import Hello from '@/components/pages/Hello'
 import NotFound from '@/components/pages/404'
+import Container from '@/components/container/Container'
 import MainNav from '@/components/navigation/MainNav'
-import SideNav from '@/components/navigation/SideNav'
+import StatsSideNav from '@/components/navigation/StatsSideNav'
+import UserSideNav from '@/components/navigation/UserSideNav'
+import User from '@/components/user/User'
+import Role from '@/components/user/Role'
+import Resource from '@/components/user/Resource'
 
 export default {
   pages: {
@@ -12,8 +17,17 @@ export default {
     Hello,
     NotFound
   },
+  container: {
+    Container
+  },
   navigation: {
     MainNav,
-    SideNav
+    StatsSideNav,
+    UserSideNav
+  },
+  user: {
+    User,
+    Role,
+    Resource
   }
 }

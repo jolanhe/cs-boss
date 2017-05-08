@@ -20,9 +20,31 @@ const router = new Router({
         {
           path: '',
           components: {
-            mainNav: CompLib.navigation.MainNav,
-            sideNav: CompLib.navigation.SideNav
+            header: CompLib.navigation.MainNav,
+            sidebar: CompLib.navigation.StatsSideNav
           }
+        },
+        {
+          path: '/user',
+          components: {
+            header: CompLib.navigation.MainNav,
+            sidebar: CompLib.navigation.UserSideNav,
+            container: CompLib.container.Container
+          },
+          children: [
+            {
+              path: '',
+              component: CompLib.user.User
+            },
+            {
+              path: 'role',
+              component: CompLib.user.Role
+            },
+            {
+              path: 'resource',
+              component: CompLib.user.Resource
+            }
+          ]
         }
       ]
     },

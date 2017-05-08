@@ -1,8 +1,8 @@
 <template>
-  <Menu mode="horizontal" theme="dark" active-name="1">
+  <Menu mode="horizontal" theme="dark" :active-name="activeName" @on-select="routeDispatch">
     <div class="logo shrink0"></div>
     <div class="w100">
-      <Menu-item name="1">
+      <Menu-item name="/">
         <Icon type="stats-bars"></Icon>
         统计分析
       </Menu-item>
@@ -10,7 +10,7 @@
         <Icon type="ios-paper"></Icon>
         内容管理
       </Menu-item>
-      <Menu-item name="3">
+      <Menu-item name="/user">
         <Icon type="ios-people"></Icon>
         用户管理
       </Menu-item>
@@ -51,7 +51,10 @@ export default {
     }),
     ...mapGetters([
       'userProps'
-    ])
+    ]),
+    activeName () {
+      return /^\/([^/]*)/.exec(this.$route.path)[0]
+    }
   },
   watch: {
     result () {
@@ -81,6 +84,9 @@ export default {
         account: this.userProps.account,
         token: this.userProps.token
       }))
+    },
+    routeDispatch (name) {
+      this.$router.push(name)
     }
   }
 }
