@@ -18,8 +18,15 @@
 
 .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu) {
   border-right: 2px solid transparent;
-  border-left: 2px solid #39f;
   z-index: 0;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-left: 2px solid #39f;
+  }
 }
 
 .mui-scroll.ivu-menu-vertical.ivu-menu-light::after {
