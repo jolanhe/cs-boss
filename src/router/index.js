@@ -25,7 +25,7 @@ const router = new Router({
           }
         },
         {
-          path: '/user',
+          path: 'user',
           components: {
             header: CompLib.navigation.MainNav,
             sidebar: CompLib.navigation.UserSideNav,
@@ -34,15 +34,18 @@ const router = new Router({
           children: [
             {
               path: '',
-              component: CompLib.user.User
+              component: CompLib.user.User,
+              meta: { title: '用户管理' }
             },
             {
               path: 'role',
-              component: CompLib.user.Role
+              component: CompLib.user.Role,
+              meta: { title: '角色管理' }
             },
             {
               path: 'resource',
-              component: CompLib.user.Resource
+              component: CompLib.user.Resource,
+              meta: { title: '资源管理' }
             }
           ]
         }
@@ -52,8 +55,11 @@ const router = new Router({
       path: '/login',
       name: 'Login',
       component: CompLib.pages.Login,
-      // login 路由增加 meta 字段表明除此之外的所有路由都需要验证
-      meta: { exclude: true }
+      // login meta 增加 exclude 属性表明除此之外的所有路由都需要验证 token
+      meta: {
+        exclude: true,
+        title: '登录'
+      }
     },
     {
       path: '/hello',
@@ -65,7 +71,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   // 判断进入的路由是否有 meta.exclude 属性，没有则表明需要验证登录状态
-  if (!to.matched.some(record => record.meta.exclude)) {
+  if (!to.meta.exclude) {
     store.getters.userProps.token
       ? next()
       : next({
@@ -75,6 +81,12 @@ router.beforeEach((to, from, next) => {
   } else {
     next()
   }
+})
+router.afterEach(route => {
+  const t = route.meta.title
+  typeof t !== 'undefined'
+    ? document.title = t + ' - 十二翻BOSS'
+    : document.title = '十二翻BOSS'
 })
 
 export default router

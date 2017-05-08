@@ -3,7 +3,9 @@
     <router-view class="main-nav shrink0 mui-flex verticent" name="header"></router-view>
     <div class="flex1 mui-flex">
       <div class="side-nav shrink0 bod-r-1px">
-        <router-view class="mui-scroll scrollbox" name="sidebar"></router-view>
+        <keep-alive>
+          <router-view class="mui-scroll scrollbox" name="sidebar"></router-view>
+        </keep-alive>
       </div>
       <div class="scrollbox w100">
         <router-view name="container"></router-view>
