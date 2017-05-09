@@ -29,7 +29,7 @@ const router = new Router({
           components: {
             header: CompLib.navigation.MainNav,
             sidebar: CompLib.navigation.UserSideNav,
-            container: CompLib.container.Container
+            main: CompLib.container.Container
           },
           children: [
             {

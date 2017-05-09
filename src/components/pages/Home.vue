@@ -8,7 +8,7 @@
         </keep-alive>
       </div>
       <div class="scrollbox w100">
-        <router-view name="container"></router-view>
+        <router-view name="main"></router-view>
       </div>
     </div>
   </div>
