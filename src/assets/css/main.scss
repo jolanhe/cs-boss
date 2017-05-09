@@ -1,5 +1,6 @@
-@import 'common';
-@import 'ivew-extends';
-@import './components/main-nav';
-@import './components/side-nav';
+@import './extensions/ivew';
+@import './layout/common';
+@import './layout/header';
+@import './layout/sidebar';
+@import './layout/gap';
 @import './pages/login';
