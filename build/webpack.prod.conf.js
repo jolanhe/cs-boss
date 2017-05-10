@@ -10,6 +10,10 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 var env = config.build.env
+// 存到变量里是为了在 build.101 里引入的时候能对其赋值
+var wpdp = new webpack.DefinePlugin({
+  'process.env': env
+})
 
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -24,11 +28,9 @@ var webpackConfig = merge(baseWebpackConfig, {
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
-  plugins: [
+  plugins:  [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
-    new webpack.DefinePlugin({
-      'process.env': env
-    }),
+    wpdp,
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false

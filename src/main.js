@@ -16,7 +16,7 @@ Vue.config.productionTip = false
 iView.Message.config({ duration: 2.2 })
 Vue.use(iView)
 
-if (process.env.NODE_ENV !== 'production') {
+if (typeof process.env.API_PATH !== 'undefined') {
   axios.defaults.baseURL = window.location.protocol + process.env.API_PATH
 }
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8'
