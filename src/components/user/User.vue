@@ -2,7 +2,7 @@
   <div>
     <h4 class="marg24">用户管理</h4>
     <div class="marg24">
-      <Table :columns="columns1" :data="data1"></Table>
+      <Table :columns="columns" :data="grid" :no-data-text="tipe"></Table>
     </div>
   </div>
 </template>
@@ -13,7 +13,10 @@ import { mapState } from 'vuex'
 export default {
   data () {
     return {
-      columns1: [
+      columns: [
+        {
+          type: 'index'
+        },
         {
           title: 'uid',
           key: 'uid'
@@ -27,7 +30,8 @@ export default {
           key: 'create_time'
         }
       ],
-      data1: []
+      grid: [],
+      tipe: '加载中...'
     }
   },
   computed: {
@@ -43,10 +47,20 @@ export default {
       // console.log(this.data1)
       this.$axios.all([this.$api.user.queryAllUser(JSON.stringify(this.user), this.$api.params(this.user))])
       .then(this.$axios.spread(({ data }) => {
-        this.data1 = data.data
+        switch (data.status_code) {
+          case 0:
+            if (data.data.length !== 0) {
+              this.grid = data.data
+            } else {
+              this.tipe = '暂无数据'
+            }
+            break
+          default:
+            this.$store.commit('ERROR_RESPONSE_HANDLER', data)
+        }
       }))
-      .catch(function (reason) {
-        console.log(reason)
+      .catch(reason => {
+        this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
       })
     }
   },
