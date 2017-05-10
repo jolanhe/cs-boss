@@ -101,3 +101,10 @@
 .ivu-loading-bar-inner-color-primary {
   box-shadow: 0 0 10px rgba(92,173,255,0.7);
 }
+
+.ivu-table td {
+  transition: background-color .1s ease;
+}
+tr.ivu-table-row-hover td {
+  transition-duration: 0s;
+}

@@ -1,33 +1,57 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
-    <Row type="flex" :gutter="24">
-      <Col span="12">
-        <Card shadow>
-          <p slot="title">使用阴影效果的卡片</p>
-          <p>卡片内容</p>
-          <p>卡片内容</p>
-          <p>卡片内容</p>
-        </Card>
-      </Col>
-      <Col span="12">
-        <Card shadow>
-          <p slot="title">使用阴影效果的卡片</p>
-          <p>卡片内容</p>
-          <p>卡片内容</p>
-          <p>卡片内容</p>
-        </Card>
-      </Col>
-    </Row>
+    <h4 class="marg24">用户管理</h4>
+    <div class="marg24">
+      <Table :columns="columns1" :data="data1"></Table>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
-      msg: 'User'
+      columns1: [
+        {
+          title: 'uid',
+          key: 'uid'
+        },
+        {
+          title: 'account',
+          key: 'account'
+        },
+        {
+          title: 'create_time',
+          key: 'create_time'
+        }
+      ],
+      data1: []
     }
+  },
+  computed: {
+    ...mapState({
+      user: state => state.user.props
+    })
+  },
+  created () {
+    this.fetchData()
+  },
+  methods: {
+    fetchData () {
+      // console.log(this.data1)
+      this.$axios.all([this.$api.user.queryAllUser(JSON.stringify(this.user), this.$api.params(this.user))])
+      .then(this.$axios.spread(({ data }) => {
+        this.data1 = data.data
+      }))
+      .catch(function (reason) {
+        console.log(reason)
+      })
+    }
+  },
+  watch: {
+    '$route': 'fetchData'
   }
 }
 </script>
