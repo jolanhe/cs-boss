@@ -3,8 +3,8 @@
     <div class="hero shrink0">Business & Operation Support System</div>
     <Form ref="formInline" :model="formInline" :rules="ruleInline" class="login shrink0">
       <h1>BOSS</h1>
-      <Form-item prop="user">
-        <Input type="text" v-model="formInline.user" size="large" placeholder="手机号">
+      <Form-item prop="account">
+        <Input type="text" v-model="formInline.account" size="large" placeholder="手机号">
         <Icon type="iphone" slot="prepend"></Icon>
         </Input>
       </Form-item>
@@ -35,12 +35,12 @@ export default {
   data () {
     return {
       formInline: {
-        user: '18565707791',
+        account: '18565707791',
         password: 'abc123',
         code: '123123'
       },
       ruleInline: {
-        user: this.$utils.rules.phone,
+        account: this.$utils.rules.phone,
         password: this.$utils.rules.password,
         code: this.$utils.rules.code
       },
@@ -82,8 +82,8 @@ export default {
         if (valid) {
           const f = this.formInline
           const account = JSON.stringify({
-            account: f.user.trim(),
-            password: this.$utils.sha1(f.user.trim() + '@user@' + f.password),
+            account: f.account.trim(),
+            password: this.$utils.sha1(f.account.trim() + '@user@' + f.password),
             code: f.code
           })
           this.login(account)

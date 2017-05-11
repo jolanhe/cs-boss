@@ -1,52 +1,75 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <h4 class="marg1">角色管理</h4>
+    <div class="marg1">
+      <Table :columns="columns" :data="grid" :no-data-text="tipe"></Table>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data () {
     return {
-      msg: 'Role'
+      columns: [
+        {
+          type: 'index',
+          width: 60,
+          align: 'center'
+        },
+        {
+          title: 'role_id',
+          key: 'role_id'
+        },
+        {
+          title: 'name',
+          key: 'name'
+        },
+        {
+          title: 'create_time',
+          key: 'create_time'
+        }
+      ],
+      grid: [],
+      tipe: '加载中...'
     }
+  },
+  computed: {
+    ...mapState({
+      user: state => state.user.props
+    })
+  },
+  created () {
+    this.fetchData()
+  },
+  methods: {
+    fetchData () {
+      this.tipe = '加载中...'
+      this.$axios.all([this.$api.user.queryAllRole(JSON.stringify(this.user), this.$api.params(this.user))])
+      .then(this.$axios.spread(({ data }) => {
+        switch (data.status_code) {
+          case 0:
+            if (data.data.length !== 0) {
+              this.grid = data.data
+            } else {
+              this.tipe = '暂无数据'
+            }
+            break
+          default:
+            this.tipe = '获取失败'
+            this.$store.commit('ERROR_RESPONSE_HANDLER', data)
+        }
+      }))
+      .catch(reason => {
+        this.tipe = '获取失败'
+        this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
+      })
+    }
+  },
+  watch: {
+    '$route': 'fetchData'
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>

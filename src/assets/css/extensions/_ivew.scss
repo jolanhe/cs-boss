@@ -108,3 +108,19 @@
 tr.ivu-table-row-hover td {
   transition-duration: 0s;
 }
+
+.main-header {
+  border-radius: 0;
+  .ivu-form-item {
+    margin: 14px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.ivu-form-item {
+  .ivu-btn + .ivu-btn {
+    margin-left: 8px;
+  }
+}

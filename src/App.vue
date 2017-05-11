@@ -14,6 +14,6 @@ export default {
 <style>
 #app {
   height: 100%;
-  background: #f5f7f9;
+  background: #f4f4f4;
 }
 </style>

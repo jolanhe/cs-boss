@@ -9,5 +9,14 @@ export default {
   },
   queryAllUser (data, params) {
     return post('/boss_user/query_all_user', data, { params })
+  },
+  queryAllRole (data, params) {
+    return post('/boss_user/query_all_role', data, { params })
+  },
+  queryAllResource (data, params) {
+    return post('/boss_user/query_all_resource', data, { params })
+  },
+  addUser (data, params) {
+    return post('/boss_user/add_user', data, { params })
   }
 }

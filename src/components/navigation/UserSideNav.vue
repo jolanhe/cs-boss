@@ -1,5 +1,5 @@
 <template>
-  <Menu :active-name="activeName" :open-names="['1']" @on-select="routeDispatch">
+  <Menu :active-name="activeName" :open-names="['1']" @on-select="routeDispatch" width="200px">
       <Submenu name="1">
         <template slot="title">
           <Icon type="ios-people"></Icon>

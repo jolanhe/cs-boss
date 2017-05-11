@@ -1,5 +1,5 @@
 <template>
-  <Menu active-name="1" :open-names="['2','3','4']">
+  <Menu active-name="1" :open-names="['2','3','4']" width="200px">
       <Menu-item name="1">
         <Icon type="clipboard"></Icon>
         十二翻概况
