@@ -1,0 +1,14 @@
+.modal-enter-active, .modal-leave-active {
+  transition: all .3s ease;
+}
+.modal-enter, .modal-leave-active {
+  transform: perspective(1500px) rotate3d(1,0,0,10deg) translate3d(0,-18px,0) scale3d(.96,.96,.96);
+  opacity: 0;
+}
+
+.mui-fade-enter-active, .mui-fade-leave-active {
+  transition: opacity .35s
+}
+.mui-fade-enter, .mui-fade-leave-active {
+  opacity: 0
+}

@@ -13,7 +13,7 @@
       <Table :columns="columns" :data="grid" :no-data-text="tipe"></Table>
     </div>
 
-    <Modal v-model="addUserModal" title="添加用户" width="300">
+    <Modal v-model="addUserModal" title="添加用户" width="300" :transition-names="['modal','mui-fade']">
       <Form ref="formInline" :model="formInline" :rules="ruleInline">
         <Form-item prop="account">
           <Input type="text" v-model="formInline.account" placeholder="手机号">
@@ -35,7 +35,7 @@
     </Modal>
 
 
-    <Modal v-model="removeUserModal" width="300" :transition-names="['modal','fade']">
+    <Modal v-model="removeUserModal" width="300" :transition-names="['modal','mui-fade']">
       <p slot="header" class="red-center-tt">
         <Icon type="information-circled"></Icon>
         <span>删除确认</span>

@@ -80,14 +80,3 @@ h4, h5, h6 {
     z-index: 1;
   }
 }
-
-.modal-enter-active {
-  transition: all .3s ease;
-}
-.modal-leave-active {
-  transition: all .3s ease;
-}
-.modal-enter, .modal-leave-active {
-  transform: translate3d(0,-10px,0);
-  opacity: 0;
-}
