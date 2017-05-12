@@ -18,5 +18,8 @@ export default {
   },
   addUser (data, params) {
     return post('/boss_user/add_user', data, { params })
+  },
+  removeUser (data, params) {
+    return post('/boss_user/remove_user', data, { params })
   }
 }

@@ -10,5 +10,9 @@ export default {
   code: [
     { required: true, message: '请填写 暗号', trigger: 'blur' },
     { type: 'string', pattern: /^(\d{6}|\d{8})$/, message: '暗号 必须是6或8位数字', trigger: 'blur' }
+  ],
+  name: [
+    { required: true, message: '请填写 E-mail', trigger: 'blur' },
+    { type: 'string', pattern: /^[\w]+$/, message: 'E-mail 只能包含字母、数字、下划线 "_"', trigger: 'blur' }
   ]
 }
