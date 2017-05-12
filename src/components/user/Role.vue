@@ -51,7 +51,7 @@ export default {
       .then(this.$axios.spread(({ data }) => {
         switch (data.status_code) {
           case 0:
-            if (data.data.length !== 0) {
+            if (data.data && data.data.length !== 0) {
               this.grid = data.data
             } else {
               this.tipe = '暂无数据'

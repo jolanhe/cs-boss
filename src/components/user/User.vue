@@ -35,7 +35,7 @@
     </Modal>
 
 
-    <Modal v-model="removeUserModal" width="300">
+    <Modal v-model="removeUserModal" width="300" :transition-names="['modal','fade']">
       <p slot="header" class="red-center-tt">
         <Icon type="information-circled"></Icon>
         <span>删除确认</span>
@@ -128,7 +128,7 @@ export default {
       .then(this.$axios.spread(({ data }) => {
         switch (data.status_code) {
           case 0:
-            if (data.data.length !== 0) {
+            if (data.data && data.data.length !== 0) {
               this.grid = data.data
             } else {
               this.tipe = '暂无数据'
