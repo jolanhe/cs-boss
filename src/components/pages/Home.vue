@@ -16,9 +16,6 @@
 
 <script>
 export default {
-  data () {
-    return {}
-  },
   computed: {
     result () {
       return this.$store.state.common.result

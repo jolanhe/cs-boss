@@ -21,8 +21,15 @@ const router = new Router({
           path: '',
           components: {
             header: CompLib.navigation.MainNav,
-            sidebar: CompLib.navigation.StatsSideNav
-          }
+            sidebar: CompLib.navigation.StatsSideNav,
+            main: CompLib.container.Container
+          },
+          children: [
+            {
+              path: '',
+              component: CompLib.stats.Overview
+            }
+          ]
         },
         {
           path: 'user',
