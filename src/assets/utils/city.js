@@ -5,29 +5,29 @@ export default {
       value: '0'
     },
     {
-      label: '广东省',
+      label: '广东',
       value: '7',
       children: [
         {
-          label: '全部市',
+          label: '全部',
           value: '7'
         },
         {
-          label: '东莞市',
+          label: '东莞',
           value: '119',
           children: [
             {
-              label: '全部区',
+              label: '全部',
               value: '1213'
             }
           ]
         },
         {
-          label: '惠州市',
+          label: '惠州',
           value: '301',
           children: [
             {
-              label: '全部区',
+              label: '全部',
               value: '301'
             },
             {
