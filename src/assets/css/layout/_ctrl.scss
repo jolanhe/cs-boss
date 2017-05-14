@@ -1,0 +1,46 @@
+.marg1 {
+  margin: 24px 40px;
+}
+
+.marg2 {
+  margin: 0 24px;
+}
+
+.padd1 {
+  padding: 0 24px;
+}
+
+.main-header {
+  border-radius: 0;
+  .ivu-form-item {
+    margin: 14px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .ivu-cascader, .ivu-date-picker {
+    width: 200px;
+  }
+}
+
+.ivu-row-flex.col-gap > .ivu-col {
+  margin-right: 30px;
+}
+
+.ivu-row-flex.col-gap2 > .ivu-col {
+  margin-right: 12px;
+}
+
+.ivu-form-item.btn-gap {
+  .ivu-btn + .ivu-btn {
+    margin-left: 12px;
+  }
+}
+
+.ivu-form-item.font0 .ivu-form-item-content, .ivu-col.font0 {
+  font-size: 0;
+}
+
+.i-marg {
+  margin-right: 6px;
+}

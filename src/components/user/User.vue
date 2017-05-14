@@ -2,8 +2,8 @@
   <div>
     <Card shadow class="main-header padd1">
       <h5>用户管理</h5>
-      <Form label-position="left" :label-width="50">
-        <Form-item label="操作">
+      <Form label-position="left" :label-width="48">
+        <Form-item label="操作：" class="btn-gap font0">
           <Button type="primary" icon="person-add" @click="addUserModal = true">添加用户</Button>
           <Button type="error" icon="close">批量删除</Button>
         </Form-item>
@@ -13,7 +13,7 @@
       <Table :columns="columns" :data="grid" :no-data-text="tipe"></Table>
     </div>
 
-    <Modal v-model="addUserModal" title="添加用户" width="300" :transition-names="['modal','mui-fade']">
+    <Modal v-model="addUserModal" title="添加用户" width="300" @on-cancel="resetFields('formInline')" :transition-names="['modal','mui-fade']">
       <Form ref="formInline" :model="formInline" :rules="ruleInline">
         <Form-item prop="account">
           <Input type="text" v-model="formInline.account" placeholder="手机号">
@@ -84,7 +84,7 @@ export default {
           key: 'action',
           width: 80,
           render (row, col, index) {
-            return `<i-button type="text" size="small" @click="showUserModal(${index})">删除</i-button>`
+            return `<i-button type="text" size="small" @click="showRemoveUserModal(${index})">删除</i-button>`
           }
         }
       ],
@@ -116,10 +116,10 @@ export default {
     email () { return this.formInline.email + '@useus.cn' }
   },
   created () {
-    this.fetchData()
+    // this.fetchData()
   },
   watch: {
-    '$route': 'fetchData'
+    // '$route': 'fetchData'
   },
   methods: {
     fetchData () {
@@ -171,10 +171,7 @@ export default {
                     create_time: data.data.create_time || ''
                   })
                 }
-                this.formInline = {
-                  account: '',
-                  email: ''
-                }
+                this.$refs[name].resetFields()
                 break
               default:
                 this.$store.commit('ERROR_RESPONSE_HANDLER', data)
@@ -192,7 +189,11 @@ export default {
       })
     },
 
-    showUserModal (index) {
+    resetFields (name) {
+      this.$refs[name].resetFields()
+    },
+
+    showRemoveUserModal (index) {
       this.willRemove = this.grid[index]
       this.willRemove.index = index
       this.removeUserModal = true

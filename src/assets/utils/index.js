@@ -1,6 +1,7 @@
 import md5 from 'md5'
 import sha1 from 'sha1'
 import rules from './validation-rules'
+import city from './city'
 
 /**
  * prototype extend
@@ -61,6 +62,7 @@ Date.addProtoMethod('format', function (fmt) {
 export default {
   sha1,
   rules,
+  city,
   generateChainID () {
     const chain = Math.random() + ''
     return md5(chain)

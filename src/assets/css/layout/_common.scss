@@ -80,3 +80,25 @@ h4, h5, h6 {
     z-index: 1;
   }
 }
+
+.mui-scroll, .ivu-cascader-menu {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+.mui-scroll, .ivu-cascader-menu {
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    background-clip: content-box;
+    border-top: 5px solid rgba(255,255,255,0);
+    border-bottom: 5px solid rgba(255,255,255,0);
+    border-right: 4px solid rgba(255,255,255,0);
+  }
+}
+
+.side-nav:hover .mui-scroll, .ivu-cascader-menu:hover {
+  &::-webkit-scrollbar-thumb {
+    background-color: #e3e8ee;
+  }
+}
