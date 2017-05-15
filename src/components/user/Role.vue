@@ -11,6 +11,7 @@
 import { mapState } from 'vuex'
 
 export default {
+  name: 'Role',
   data () {
     return {
       columns: [

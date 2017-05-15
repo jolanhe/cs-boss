@@ -13,12 +13,12 @@
             <Form-item label="时间：">
               <Row type="flex" class="col-gap2">
                 <Col class="font0">
-                  <Button-group>
-                    <Button type="primary">昨天</Button>
-                    <Button>今天</Button>
-                    <Button>最近7天</Button>
-                    <Button>最近30天</Button>
-                  </Button-group>
+                  <Radio-group v-model="button1" type="button">
+                    <Radio label="昨天"></Radio>
+                    <Radio label="今天"></Radio>
+                    <Radio label="最近7天"></Radio>
+                    <Radio label="最近30天"></Radio>
+                  </Radio-group>
                 </Col>
                 <Col>
                   <Date-picker type="daterange" placeholder="选择日期"></Date-picker>
@@ -34,10 +34,12 @@
 
 <script>
 export default {
+  name: 'Overview',
   data () {
     return {
       data: this.$utils.city.data,
-      value3: []
+      value3: [],
+      button1: '昨天'
     }
   },
   created () {

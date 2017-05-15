@@ -55,6 +55,7 @@
 import { mapState } from 'vuex'
 
 export default {
+  name: 'User',
   data () {
     return {
       columns: [
