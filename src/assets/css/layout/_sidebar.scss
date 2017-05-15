@@ -1,3 +1,9 @@
 .side-nav {
   height: 100%;
+  & > ul {
+    height: 100%;
+    & > .ivu-menu-item:first-child, & > .ivu-menu-submenu:first-child > .ivu-menu-submenu-title {
+      padding-top: 16px;
+    }
+  }
 }

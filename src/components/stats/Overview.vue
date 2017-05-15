@@ -14,8 +14,8 @@
               <Row type="flex" class="col-gap2">
                 <Col class="font0">
                   <Button-group>
-                    <Button type="primary">昨日</Button>
-                    <Button>今日</Button>
+                    <Button type="primary">昨天</Button>
+                    <Button>今天</Button>
                     <Button>最近7天</Button>
                     <Button>最近30天</Button>
                   </Button-group>
@@ -39,6 +39,9 @@ export default {
       data: this.$utils.city.data,
       value3: []
     }
+  },
+  created () {
+    console.log('yes')
   }
 }
 </script>
