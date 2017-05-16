@@ -29,7 +29,7 @@
             :disabled="disabled"
             :change-on-select="changeOnSelect"
             :trigger="trigger"
-            :hover-plus="hoverPlus"></Caspanel>
+            :tap-close="tapClose"></Caspanel>
           <div :class="[prefixCls + '-dropdown']" v-show="filterable && query !== '' && querySelections.length">
             <ul :class="[selectPrefixCls + '-dropdown-list']">
               <li
@@ -104,7 +104,7 @@ export default {
       type: Boolean,
       default: false
     },
-    hoverPlus: {
+    tapClose: {
       type: Boolean,
       default: true
     },

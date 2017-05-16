@@ -6,7 +6,7 @@
         <Row type="flex" class="col-gap">
           <Col>
             <Form-item label="区域：">
-              <Cascader v-model="value3" :data="data" trigger="hover" :clearable="false" filterable placeholder="选择区域"></Cascader>
+              <Cascader v-model="value3" :data="data" :clearable="false" placeholder="选择区域" @on-change="handleChange" filterable></Cascader>
             </Form-item>
           </Col>
           <Col>
@@ -42,8 +42,11 @@ export default {
       button1: '昨天'
     }
   },
-  created () {
-    console.log('yes')
+  methods: {
+    handleChange (value, selectedData) {
+      // this.text = selectedData.map(o => o.label).join(', ')
+      // console.log(selectedData)
+    }
   }
 }
 </script>

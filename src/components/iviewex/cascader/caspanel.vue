@@ -9,7 +9,7 @@
         :tmp-item="tmpItem"
         @click.native.stop="handleClickItem(item)"
         @mouseenter.native.stop="handleHoverItem(item)"></Casitem>
-    </ul><Caspanel v-if="sublist && sublist.length" :prefix-cls="prefixCls" :data="sublist" :disabled="disabled" :trigger="trigger" :change-on-select="changeOnSelect" :hover-plus="hoverPlus"></Caspanel>
+    </ul><Caspanel v-if="sublist && sublist.length" :prefix-cls="prefixCls" :data="sublist" :disabled="disabled" :trigger="trigger" :change-on-select="changeOnSelect" :tap-close="tapClose"></Caspanel>
   </span>
 </template>
 <script>
@@ -30,7 +30,7 @@ export default {
     },
     disabled: Boolean,
     changeOnSelect: Boolean,
-    hoverPlus: Boolean,
+    tapClose: Boolean,
     trigger: String,
     prefixCls: String
   },
@@ -50,7 +50,7 @@ export default {
     handleClickItem (item) {
       // if (!item) { return }
       // this.handleTriggerPlus(item)
-      if (this.hoverPlus === true) {
+      if (this.tapClose === true) {
         this.handleTriggerPlus(item)
       } else {
         if (this.trigger !== 'click' && item.children) { return }
@@ -60,7 +60,7 @@ export default {
     handleHoverItem (item) {
       // if (!item.children) { return }
       // this.handleTriggerItem(item)
-      if (this.hoverPlus === true && item.children) {
+      if (this.tapClose === true && item.children) {
         this.handleTriggerItem(item)
       } else {
         if (this.trigger !== 'hover' || !item.children) { return }
@@ -88,14 +88,14 @@ export default {
         this.sublist = item.children
         this.dispatch('Cascader', 'on-result-change', {
           lastValue: false,
-          changeOnSelect: this.hoverPlus ? false : this.changeOnSelect,
+          changeOnSelect: this.tapClose ? false : this.changeOnSelect,
           fromInit: fromInit
         })
       } else {
         this.sublist = []
         this.dispatch('Cascader', 'on-result-change', {
           lastValue: true,
-          changeOnSelect: this.hoverPlus ? true : this.changeOnSelect,
+          changeOnSelect: this.tapClose ? true : this.changeOnSelect,
           fromInit: fromInit
         })
       }
