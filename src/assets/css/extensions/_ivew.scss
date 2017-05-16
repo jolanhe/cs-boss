@@ -98,10 +98,10 @@
   box-shadow: 0 0 10px rgba(92,173,255,0.7);
 }
 
-.ivu-table td, .ivu-date-picker-cells span em, .ivu-cascader-menu .ivu-cascader-menu-item {
+.ivu-table td, .ivu-date-picker-cells span em, .ivu-cascader-menu .ivu-cascader-menu-item, .ivu-select-item {
   transition: background-color .1s ease;
 }
-tr.ivu-table-row-hover td, .ivu-date-picker-cells-cell:hover em, .ivu-cascader .ivu-cascader-menu-item:hover {
+tr.ivu-table-row-hover td, .ivu-date-picker-cells-cell:hover em, .ivu-cascader .ivu-cascader-menu-item:hover, .ivu-select-item:hover {
   transition-duration: 0s;
 }
 
@@ -119,4 +119,9 @@ tr.ivu-table-row-hover td, .ivu-date-picker-cells-cell:hover em, .ivu-cascader .
 .ivu-cascader-label {
   pointer-events: none;
   padding-right: 18px;
+}
+
+.ivu-cascader .ivu-select-dropdown {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
