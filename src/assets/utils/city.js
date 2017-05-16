@@ -5,7 +5,7 @@ export default {
       value: 1
     },
     {
-      label: '广东省',
+      label: '广东',
       value: 7,
       children: [
         {
@@ -639,7 +639,7 @@ export default {
       ]
     },
     {
-      label: '山东省',
+      label: '山东',
       value: 8,
       children: [
         {
@@ -1307,7 +1307,7 @@ export default {
       ]
     },
     {
-      label: '江苏省',
+      label: '江苏',
       value: 18,
       children: [
         {
@@ -1815,7 +1815,7 @@ export default {
       ]
     },
     {
-      label: '安徽省',
+      label: '安徽',
       value: 23,
       children: [
         {
@@ -2343,7 +2343,7 @@ export default {
       ]
     },
     {
-      label: '浙江省',
+      label: '浙江',
       value: 29,
       children: [
         {
@@ -2775,7 +2775,7 @@ export default {
       ]
     },
     {
-      label: '上海市',
+      label: '上海',
       value: 289,
       children: [
         {
@@ -2859,7 +2859,7 @@ export default {
       ]
     },
     {
-      label: '福建省',
+      label: '福建',
       value: 16,
       children: [
         {
@@ -3259,7 +3259,7 @@ export default {
       ]
     },
     {
-      label: '广西壮族自治区',
+      label: '广西',
       value: 17,
       children: [
         {
@@ -3785,7 +3785,7 @@ export default {
       ]
     },
     {
-      label: '海南省',
+      label: '海南',
       value: 21,
       children: [
         {
@@ -4013,7 +4013,7 @@ export default {
       ]
     },
     {
-      label: '湖北省',
+      label: '湖北',
       value: 15,
       children: [
         {
@@ -4529,7 +4529,7 @@ export default {
       ]
     },
     {
-      label: '湖南省',
+      label: '湖南',
       value: 26,
       children: [
         {
@@ -5107,7 +5107,7 @@ export default {
       ]
     },
     {
-      label: '河南省',
+      label: '河南',
       value: 30,
       children: [
         {
@@ -5841,7 +5841,7 @@ export default {
       ]
     },
     {
-      label: '江西省',
+      label: '江西',
       value: 31,
       children: [
         {
@@ -6309,7 +6309,7 @@ export default {
       ]
     },
     {
-      label: '山西省',
+      label: '山西',
       value: 10,
       children: [
         {
@@ -6853,7 +6853,7 @@ export default {
       ]
     },
     {
-      label: '内蒙古自治区',
+      label: '内蒙古',
       value: 22,
       children: [
         {
@@ -7335,7 +7335,7 @@ export default {
       ]
     },
     {
-      label: '河北省',
+      label: '河北',
       value: 25,
       children: [
         {
@@ -8095,7 +8095,7 @@ export default {
       ]
     },
     {
-      label: '北京市',
+      label: '北京',
       value: 131,
       children: [
         {
@@ -8171,7 +8171,7 @@ export default {
       ]
     },
     {
-      label: '天津市',
+      label: '天津',
       value: 332,
       children: [
         {
@@ -8247,7 +8247,7 @@ export default {
       ]
     },
     {
-      label: '甘肃省',
+      label: '甘肃',
       value: 6,
       children: [
         {
@@ -8685,7 +8685,7 @@ export default {
       ]
     },
     {
-      label: '青海省',
+      label: '青海',
       value: 11,
       children: [
         {
@@ -8915,7 +8915,7 @@ export default {
       ]
     },
     {
-      label: '新疆维吾尔自治区',
+      label: '新疆',
       value: 12,
       children: [
         {
@@ -9421,7 +9421,7 @@ export default {
       ]
     },
     {
-      label: '宁夏回族自治区',
+      label: '宁夏',
       value: 20,
       children: [
         {
@@ -9541,7 +9541,7 @@ export default {
       ]
     },
     {
-      label: '陕西省',
+      label: '陕西',
       value: 27,
       children: [
         {
@@ -10035,7 +10035,7 @@ export default {
       ]
     },
     {
-      label: '西藏自治区',
+      label: '西藏',
       value: 13,
       children: [
         {
@@ -10375,7 +10375,7 @@ export default {
       ]
     },
     {
-      label: '贵州省',
+      label: '贵州',
       value: 24,
       children: [
         {
@@ -10787,7 +10787,7 @@ export default {
       ]
     },
     {
-      label: '云南省',
+      label: '云南',
       value: 28,
       children: [
         {
@@ -11405,7 +11405,7 @@ export default {
       ]
     },
     {
-      label: '四川省',
+      label: '四川',
       value: 32,
       children: [
         {
@@ -12261,7 +12261,7 @@ export default {
       ]
     },
     {
-      label: '重庆市',
+      label: '重庆',
       value: 132,
       children: [
         {
@@ -12433,7 +12433,7 @@ export default {
       ]
     },
     {
-      label: '黑龙江省',
+      label: '黑龙江',
       value: 2,
       children: [
         {
@@ -12989,7 +12989,7 @@ export default {
       ]
     },
     {
-      label: '吉林省',
+      label: '吉林',
       value: 9,
       children: [
         {
@@ -13289,7 +13289,7 @@ export default {
       ]
     },
     {
-      label: '辽宁省',
+      label: '辽宁',
       value: 19,
       children: [
         {
@@ -13779,7 +13779,7 @@ export default {
       ]
     },
     {
-      label: '澳门特别行政区',
+      label: '澳门',
       value: 2911,
       children: [
         {
@@ -13807,7 +13807,7 @@ export default {
       ]
     },
     {
-      label: '香港特别行政区',
+      label: '香港',
       value: 2912,
       children: [
         {
@@ -13891,7 +13891,7 @@ export default {
       ]
     },
     {
-      label: '台湾省',
+      label: '台湾',
       value: 9000,
       children: [
         {
