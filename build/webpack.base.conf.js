@@ -41,6 +41,11 @@ module.exports = {
         loader: 'vue-loader',
         options: vueLoaderConfig
       },
+      // iview 按需引用是直接引用的组件库源代码，需要借助 babel 进行编译
+      {
+        test: /iview.src.*?js$/,
+        loader: 'babel-loader'
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',

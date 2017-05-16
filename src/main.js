@@ -8,14 +8,14 @@ import store from './store'
 import axios from 'axios'
 import api from './api'
 import utils from './assets/utils'
-import iView from 'iview'
+import iViewex from '@/components/iviewex'
 import 'iview/dist/styles/iview.css'
 import './assets/css/main.scss'
 
 Vue.config.productionTip = false
 
-iView.Message.config({ duration: 2.2 })
-Vue.use(iView)
+iViewex.Message.config({ duration: 2.2 })
+Vue.use(iViewex)
 
 if (typeof process.env.API_PATH !== 'undefined') {
   axios.defaults.baseURL = window.location.protocol + process.env.API_PATH
@@ -23,17 +23,17 @@ if (typeof process.env.API_PATH !== 'undefined') {
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8'
 // axios 拦截器，设置进度条
 axios.interceptors.request.use(function (config) {
-  iView.LoadingBar.start()
+  iViewex.LoadingBar.start()
   return config
 }, function (error) {
-  iView.LoadingBar.error()
+  iViewex.LoadingBar.error()
   return Promise.reject(error)
 })
 axios.interceptors.response.use(function (response) {
-  iView.LoadingBar.finish()
+  iViewex.LoadingBar.finish()
   return response
 }, function (error) {
-  iView.LoadingBar.error()
+  iViewex.LoadingBar.error()
   return Promise.reject(error)
 })
 
