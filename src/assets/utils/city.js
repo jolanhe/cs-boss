@@ -49,7 +49,7 @@ export default {
               value: 1168
             },
             {
-              label: '乳源瑶族自治县',
+              label: '乳源县',
               value: 1597
             },
             {
@@ -201,7 +201,7 @@ export default {
           value: 197,
           children: [
             {
-              label: '连山壮族瑶族自治县',
+              label: '连山县',
               value: 1162
             },
             {
@@ -209,7 +209,7 @@ export default {
               value: 1163
             },
             {
-              label: '连南瑶族自治县',
+              label: '连南县',
               value: 1596
             },
             {
@@ -2615,7 +2615,7 @@ export default {
               value: 1459
             },
             {
-              label: '景宁畲族自治县',
+              label: '景宁县',
               value: 1871
             },
             {
@@ -3307,11 +3307,11 @@ export default {
               value: 2543
             },
             {
-              label: '恭城瑶族自治县',
+              label: '恭城县',
               value: 2544
             },
             {
-              label: '龙胜各族自治县',
+              label: '龙胜县',
               value: 2550
             },
             {
@@ -3345,7 +3345,7 @@ export default {
               value: 1182
             },
             {
-              label: '都安瑶族自治县',
+              label: '都安县',
               value: 1188
             },
             {
@@ -3357,7 +3357,7 @@ export default {
               value: 1618
             },
             {
-              label: '巴马瑶族自治县',
+              label: '巴马县',
               value: 1621
             },
             {
@@ -3365,7 +3365,7 @@ export default {
               value: 2010
             },
             {
-              label: '环江毛南族自治县',
+              label: '环江县',
               value: 2021
             },
             {
@@ -3377,11 +3377,11 @@ export default {
               value: 2346
             },
             {
-              label: '大化瑶族自治县',
+              label: '大化县',
               value: 2626
             },
             {
-              label: '罗城仫佬族自治县',
+              label: '罗城县',
               value: 2629
             }
           ]
@@ -3447,7 +3447,7 @@ export default {
           value: 202,
           children: [
             {
-              label: '金秀瑶族自治县',
+              label: '金秀县',
               value: 1184
             },
             {
@@ -3481,7 +3481,7 @@ export default {
               value: 1185
             },
             {
-              label: '隆林各族自治县',
+              label: '隆林县',
               value: 1186
             },
             {
@@ -3557,7 +3557,7 @@ export default {
               value: 1183
             },
             {
-              label: '富川瑶族自治县',
+              label: '富川县',
               value: 1494
             },
             {
@@ -3689,11 +3689,11 @@ export default {
               value: 1196
             },
             {
-              label: '三江侗族自治县',
+              label: '三江县',
               value: 1495
             },
             {
-              label: '融水苗族自治县',
+              label: '融水县',
               value: 1629
             },
             {
@@ -3851,7 +3851,7 @@ export default {
           ]
         },
         {
-          label: '保亭黎族苗族自治县',
+          label: '保亭县',
           value: 1217,
           children: [
             {
@@ -3901,7 +3901,7 @@ export default {
           ]
         },
         {
-          label: '昌江黎族自治县',
+          label: '昌江县',
           value: 1642,
           children: [
             {
@@ -3911,7 +3911,7 @@ export default {
           ]
         },
         {
-          label: '陵水黎族自治县',
+          label: '陵水县',
           value: 1643,
           children: [
             {
@@ -3931,7 +3931,7 @@ export default {
           ]
         },
         {
-          label: '琼中黎族苗族自治县',
+          label: '琼中县',
           value: 2031,
           children: [
             {
@@ -3941,7 +3941,7 @@ export default {
           ]
         },
         {
-          label: '乐东黎族自治县',
+          label: '乐东县',
           value: 2032,
           children: [
             {
@@ -3971,7 +3971,7 @@ export default {
           ]
         },
         {
-          label: '白沙黎族自治县',
+          label: '白沙县',
           value: 2359,
           children: [
             {
@@ -4257,7 +4257,7 @@ export default {
               value: 2084
             },
             {
-              label: '长阳土家族自治县',
+              label: '长阳县',
               value: 2085
             },
             {
@@ -4269,7 +4269,7 @@ export default {
               value: 2655
             },
             {
-              label: '五峰土家族自治县',
+              label: '五峰县',
               value: 2785
             },
             {
@@ -4449,7 +4449,7 @@ export default {
           ]
         },
         {
-          label: '恩施土家族苗族自治州',
+          label: '恩施州',
           value: 373,
           children: [
             {
@@ -4819,7 +4819,7 @@ export default {
               value: 1306
             },
             {
-              label: '城步苗族自治县',
+              label: '城步县',
               value: 1313
             },
             {
@@ -4865,7 +4865,7 @@ export default {
           ]
         },
         {
-          label: '湘西土家族苗族自治州',
+          label: '湘西州',
           value: 274,
           children: [
             {
@@ -5029,7 +5029,7 @@ export default {
               value: 2098
             },
             {
-              label: '江华瑶族自治县',
+              label: '江华县',
               value: 2539
             },
             {
@@ -5059,7 +5059,7 @@ export default {
               value: 1301
             },
             {
-              label: '麻阳苗族自治县',
+              label: '麻阳县',
               value: 1307
             },
             {
@@ -5067,15 +5067,15 @@ export default {
               value: 1309
             },
             {
-              label: '靖州苗族侗族自治县',
+              label: '靖州县',
               value: 1318
             },
             {
-              label: '芷江侗族自治县',
+              label: '芷江县',
               value: 1727
             },
             {
-              label: '通道侗族自治县',
+              label: '通道县',
               value: 1916
             },
             {
@@ -5099,7 +5099,7 @@ export default {
               value: 2660
             },
             {
-              label: '新晃侗族自治县',
+              label: '新晃县',
               value: 2901
             }
           ]
@@ -7351,7 +7351,7 @@ export default {
               value: 1670
             },
             {
-              label: '青龙满族自治县',
+              label: '青龙县',
               value: 2035
             },
             {
@@ -7417,7 +7417,7 @@ export default {
               value: 2374
             },
             {
-              label: '孟村回族自治县',
+              label: '孟村县',
               value: 2377
             },
             {
@@ -7635,7 +7635,7 @@ export default {
               value: 1500
             },
             {
-              label: '大厂回族自治县',
+              label: '大厂县',
               value: 1549
             },
             {
@@ -7673,7 +7673,7 @@ export default {
           value: 207,
           children: [
             {
-              label: '围场满族蒙古族自治县',
+              label: '围场县',
               value: 396
             },
             {
@@ -7685,7 +7685,7 @@ export default {
               value: 1219
             },
             {
-              label: '宽城满族自治县',
+              label: '宽城县',
               value: 1646
             },
             {
@@ -7693,7 +7693,7 @@ export default {
               value: 1676
             },
             {
-              label: '丰宁满族自治县',
+              label: '丰宁县',
               value: 1899
             },
             {
@@ -8347,7 +8347,7 @@ export default {
               value: 390
             },
             {
-              label: '肃北蒙古族自治县',
+              label: '肃北县',
               value: 954
             },
             {
@@ -8367,7 +8367,7 @@ export default {
               value: 958
             },
             {
-              label: '阿克塞哈萨克族自治县',
+              label: '阿克塞县',
               value: 987
             }
           ]
@@ -8397,7 +8397,7 @@ export default {
               value: 965
             },
             {
-              label: '肃南裕固族自治县',
+              label: '肃南县',
               value: 966
             }
           ]
@@ -8419,7 +8419,7 @@ export default {
               value: 968
             },
             {
-              label: '天祝藏族自治县',
+              label: '天祝县',
               value: 969
             }
           ]
@@ -8497,7 +8497,7 @@ export default {
           ]
         },
         {
-          label: '临夏回族自治州',
+          label: '临夏州',
           value: 182,
           children: [
             {
@@ -8505,7 +8505,7 @@ export default {
               value: 380
             },
             {
-              label: '东乡族自治县',
+              label: '东乡族县',
               value: 381
             },
             {
@@ -8555,7 +8555,7 @@ export default {
               value: 2535
             },
             {
-              label: '张家川回族自治县',
+              label: '张家川县',
               value: 2746
             },
             {
@@ -8569,7 +8569,7 @@ export default {
           ]
         },
         {
-          label: '甘南藏族自治州',
+          label: '甘南州',
           value: 247,
           children: [
             {
@@ -8689,7 +8689,7 @@ export default {
       value: 11,
       children: [
         {
-          label: '海西蒙古族藏族自治州',
+          label: '海西州',
           value: 65,
           children: [
             {
@@ -8709,7 +8709,7 @@ export default {
               value: 992
             },
             {
-              label: '海西蒙古族藏族自治州直辖',
+              label: '海西州',
               value: 1051
             },
             {
@@ -8723,7 +8723,7 @@ export default {
           value: 66,
           children: [
             {
-              label: '大通回族土族自治县',
+              label: '大通县',
               value: 570
             },
             {
@@ -8753,7 +8753,7 @@ export default {
           ]
         },
         {
-          label: '海北藏族自治州',
+          label: '海北州',
           value: 67,
           children: [
             {
@@ -8765,7 +8765,7 @@ export default {
               value: 572
             },
             {
-              label: '门源回族自治县',
+              label: '门源县',
               value: 970
             },
             {
@@ -8775,7 +8775,7 @@ export default {
           ]
         },
         {
-          label: '海南藏族自治州',
+          label: '海南州',
           value: 68,
           children: [
             {
@@ -8805,7 +8805,7 @@ export default {
           value: 69,
           children: [
             {
-              label: '化隆回族自治县',
+              label: '化隆县',
               value: 577
             },
             {
@@ -8813,11 +8813,11 @@ export default {
               value: 578
             },
             {
-              label: '民和回族土族自治县',
+              label: '民和县',
               value: 976
             },
             {
-              label: '循化撒拉族自治县',
+              label: '循化县',
               value: 979
             },
             {
@@ -8825,13 +8825,13 @@ export default {
               value: 995
             },
             {
-              label: '互助土族自治县',
+              label: '互助县',
               value: 996
             }
           ]
         },
         {
-          label: '黄南藏族自治州',
+          label: '黄南州',
           value: 70,
           children: [
             {
@@ -8839,7 +8839,7 @@ export default {
               value: 579
             },
             {
-              label: '河南蒙古族自治县',
+              label: '河南县',
               value: 989
             },
             {
@@ -8853,7 +8853,7 @@ export default {
           ]
         },
         {
-          label: '玉树藏族自治州',
+          label: '玉树州',
           value: 71,
           children: [
             {
@@ -8883,7 +8883,7 @@ export default {
           ]
         },
         {
-          label: '果洛藏族自治州',
+          label: '果洛州',
           value: 72,
           children: [
             {
@@ -8961,7 +8961,7 @@ export default {
           value: 83,
           children: [
             {
-              label: '塔什库尔干塔吉克自治县',
+              label: '塔县',
               value: 714
             },
             {
@@ -9011,7 +9011,7 @@ export default {
           ]
         },
         {
-          label: '克孜勒苏柯尔克孜自治州',
+          label: '克州',
           value: 84,
           children: [
             {
@@ -9075,7 +9075,7 @@ export default {
           ]
         },
         {
-          label: '巴音郭楞蒙古自治州',
+          label: '巴州',
           value: 86,
           children: [
             {
@@ -9099,7 +9099,7 @@ export default {
               value: 741
             },
             {
-              label: '焉耆回族自治县',
+              label: '焉耆县',
               value: 745
             },
             {
@@ -9117,7 +9117,7 @@ export default {
           ]
         },
         {
-          label: '博尔塔拉蒙古自治州',
+          label: '博州',
           value: 88,
           children: [
             {
@@ -9153,7 +9153,7 @@ export default {
           ]
         },
         {
-          label: '伊犁哈萨克自治州',
+          label: '伊犁州',
           value: 90,
           children: [
             {
@@ -9173,7 +9173,7 @@ export default {
               value: 754
             },
             {
-              label: '察布查尔锡伯自治县',
+              label: '察布查尔县',
               value: 756
             },
             {
@@ -9207,7 +9207,7 @@ export default {
               value: 749
             },
             {
-              label: '巴里坤哈萨克自治县',
+              label: '巴里坤县',
               value: 757
             },
             {
@@ -9255,7 +9255,7 @@ export default {
           ]
         },
         {
-          label: '昌吉回族自治州',
+          label: '昌吉州',
           value: 93,
           children: [
             {
@@ -9267,7 +9267,7 @@ export default {
               value: 753
             },
             {
-              label: '木垒哈萨克自治县',
+              label: '木垒县',
               value: 758
             },
             {
@@ -9305,7 +9305,7 @@ export default {
               value: 775
             },
             {
-              label: '和布克赛尔蒙古自治县',
+              label: '和布克赛尔县',
               value: 777
             },
             {
@@ -10467,7 +10467,7 @@ export default {
               value: 1632
             },
             {
-              label: '玉屏侗族自治县',
+              label: '玉屏县',
               value: 1917
             },
             {
@@ -10475,11 +10475,11 @@ export default {
               value: 2023
             },
             {
-              label: '松桃苗族自治县',
+              label: '松桃县',
               value: 2239
             },
             {
-              label: '沿河土家族自治县',
+              label: '沿河县',
               value: 2514
             },
             {
@@ -10487,7 +10487,7 @@ export default {
               value: 2551
             },
             {
-              label: '印江土家族苗族自治县',
+              label: '印江县',
               value: 2729
             }
           ]
@@ -10501,7 +10501,7 @@ export default {
               value: 392
             },
             {
-              label: '威宁彝族回族苗族自治县',
+              label: '威宁县',
               value: 1001
             },
             {
@@ -10555,7 +10555,7 @@ export default {
               value: 2351
             },
             {
-              label: '道真仡佬族苗族自治县',
+              label: '道真县',
               value: 2515
             },
             {
@@ -10567,7 +10567,7 @@ export default {
               value: 2727
             },
             {
-              label: '务川仡佬族苗族自治县',
+              label: '务川县',
               value: 2732
             },
             {
@@ -10597,11 +10597,11 @@ export default {
           value: 263,
           children: [
             {
-              label: '紫云苗族布依族自治县',
+              label: '紫云县',
               value: 1208
             },
             {
-              label: '关岭布依族苗族自治县',
+              label: '关岭县',
               value: 1209
             },
             {
@@ -10609,7 +10609,7 @@ export default {
               value: 1210
             },
             {
-              label: '镇宁布依族苗族自治县',
+              label: '镇宁县',
               value: 1638
             },
             {
@@ -10623,7 +10623,7 @@ export default {
           ]
         },
         {
-          label: '黔南布依族苗族自治州',
+          label: '黔南州',
           value: 306,
           children: [
             {
@@ -10639,7 +10639,7 @@ export default {
               value: 1636
             },
             {
-              label: '三都水族自治县',
+              label: '三都县',
               value: 1639
             },
             {
@@ -10677,7 +10677,7 @@ export default {
           ]
         },
         {
-          label: '黔东南苗族侗族自治州',
+          label: '黔东南州',
           value: 342,
           children: [
             {
@@ -10747,7 +10747,7 @@ export default {
           ]
         },
         {
-          label: '黔西南布依族苗族自治州',
+          label: '黔西南州',
           value: 343,
           children: [
             {
@@ -10795,7 +10795,7 @@ export default {
           value: 104,
           children: [
             {
-              label: '寻甸回族彝族自治县',
+              label: '寻甸县',
               value: 856
             },
             {
@@ -10819,7 +10819,7 @@ export default {
               value: 866
             },
             {
-              label: '石林彝族自治县',
+              label: '石林县',
               value: 872
             },
             {
@@ -10831,7 +10831,7 @@ export default {
               value: 1078
             },
             {
-              label: '禄劝彝族苗族自治县',
+              label: '禄劝县',
               value: 1082
             },
             {
@@ -10853,7 +10853,7 @@ export default {
           ]
         },
         {
-          label: '楚雄彝族自治州',
+          label: '楚雄州',
           value: 105,
           children: [
             {
@@ -10919,11 +10919,11 @@ export default {
               value: 877
             },
             {
-              label: '峨山彝族自治县',
+              label: '峨山县',
               value: 878
             },
             {
-              label: '新平彝族傣族自治县',
+              label: '新平县',
               value: 879
             },
             {
@@ -10941,7 +10941,7 @@ export default {
           ]
         },
         {
-          label: '红河哈尼族彝族自治州',
+          label: '红河州',
           value: 107,
           children: [
             {
@@ -10973,11 +10973,11 @@ export default {
               value: 887
             },
             {
-              label: '河口瑶族自治县',
+              label: '河口县',
               value: 892
             },
             {
-              label: '屏边苗族自治县',
+              label: '屏边县',
               value: 893
             },
             {
@@ -10985,7 +10985,7 @@ export default {
               value: 894
             },
             {
-              label: '金平苗族瑶族傣族自治县',
+              label: '金平县',
               value: 895
             },
             {
@@ -11003,11 +11003,11 @@ export default {
           value: 108,
           children: [
             {
-              label: '墨江哈尼族自治县',
+              label: '墨江县',
               value: 888
             },
             {
-              label: '江城哈尼族彝族自治县',
+              label: '江城县',
               value: 898
             },
             {
@@ -11015,15 +11015,15 @@ export default {
               value: 902
             },
             {
-              label: '澜沧拉祜族自治县',
+              label: '澜沧县',
               value: 903
             },
             {
-              label: '宁洱哈尼族彝族自治县',
+              label: '宁洱县',
               value: 904
             },
             {
-              label: '景谷傣族彝族自治县',
+              label: '景谷县',
               value: 905
             },
             {
@@ -11031,11 +11031,11 @@ export default {
               value: 907
             },
             {
-              label: '景东彝族自治县',
+              label: '景东县',
               value: 908
             },
             {
-              label: '西盟佤族自治县',
+              label: '西盟县',
               value: 933
             },
             {
@@ -11045,7 +11045,7 @@ export default {
           ]
         },
         {
-          label: '西双版纳傣族自治州',
+          label: '西双版纳',
           value: 109,
           children: [
             {
@@ -11067,7 +11067,7 @@ export default {
           value: 110,
           children: [
             {
-              label: '沧源佤族自治县',
+              label: '沧源县',
               value: 906
             },
             {
@@ -11095,17 +11095,17 @@ export default {
               value: 948
             },
             {
-              label: '耿马傣族佤族自治县',
+              label: '耿马县',
               value: 949
             }
           ]
         },
         {
-          label: '大理白族自治州',
+          label: '大理州',
           value: 111,
           children: [
             {
-              label: '南涧彝族自治县',
+              label: '南涧县',
               value: 911
             },
             {
@@ -11117,7 +11117,7 @@ export default {
               value: 915
             },
             {
-              label: '漾濞彝族自治县',
+              label: '漾濞县',
               value: 916
             },
             {
@@ -11129,7 +11129,7 @@ export default {
               value: 919
             },
             {
-              label: '巍山彝族回族自治县',
+              label: '巍山县',
               value: 920
             },
             {
@@ -11181,7 +11181,7 @@ export default {
           ]
         },
         {
-          label: '怒江傈僳族自治州',
+          label: '怒江州',
           value: 113,
           children: [
             {
@@ -11193,11 +11193,11 @@ export default {
               value: 927
             },
             {
-              label: '兰坪白族普米族自治县',
+              label: '兰坪县',
               value: 928
             },
             {
-              label: '贡山独龙族怒族自治县',
+              label: '贡山县',
               value: 930
             }
           ]
@@ -11215,7 +11215,7 @@ export default {
               value: 950
             },
             {
-              label: '宁蒗彝族自治县',
+              label: '宁蒗县',
               value: 1076
             },
             {
@@ -11223,17 +11223,17 @@ export default {
               value: 1079
             },
             {
-              label: '玉龙纳西族自治县',
+              label: '玉龙县',
               value: 1087
             }
           ]
         },
         {
-          label: '迪庆藏族自治州',
+          label: '迪庆州',
           value: 115,
           children: [
             {
-              label: '维西傈僳族自治县',
+              label: '维西县',
               value: 929
             },
             {
@@ -11247,7 +11247,7 @@ export default {
           ]
         },
         {
-          label: '德宏傣族景颇族自治州',
+          label: '德宏州',
           value: 116,
           children: [
             {
@@ -11273,7 +11273,7 @@ export default {
           ]
         },
         {
-          label: '文山壮族苗族自治州',
+          label: '文山州',
           value: 177,
           children: [
             {
@@ -11409,7 +11409,7 @@ export default {
       value: 32,
       children: [
         {
-          label: '甘孜藏族自治州',
+          label: '甘孜州',
           value: 73,
           children: [
             {
@@ -11725,11 +11725,11 @@ export default {
               value: 669
             },
             {
-              label: '马边彝族自治县',
+              label: '马边县',
               value: 670
             },
             {
-              label: '峨边彝族自治县',
+              label: '峨边县',
               value: 672
             },
             {
@@ -11747,7 +11747,7 @@ export default {
           ]
         },
         {
-          label: '凉山彝族自治州',
+          label: '凉山州',
           value: 80,
           children: [
             {
@@ -11767,7 +11767,7 @@ export default {
               value: 675
             },
             {
-              label: '木里藏族自治县',
+              label: '木里县',
               value: 676
             },
             {
@@ -11847,7 +11847,7 @@ export default {
           ]
         },
         {
-          label: '阿坝藏族羌族自治州',
+          label: '阿坝州',
           value: 185,
           children: [
             {
@@ -11981,7 +11981,7 @@ export default {
               value: 594
             },
             {
-              label: '北川羌族自治县',
+              label: '北川县',
               value: 601
             },
             {
@@ -12285,7 +12285,7 @@ export default {
               value: 1122
             },
             {
-              label: '彭水苗族土家族自治县',
+              label: '彭水县',
               value: 1123
             },
             {
@@ -12305,7 +12305,7 @@ export default {
               value: 1127
             },
             {
-              label: '秀山土家族苗族自治县',
+              label: '秀山县',
               value: 1128
             },
             {
@@ -12341,7 +12341,7 @@ export default {
               value: 1559
             },
             {
-              label: '酉阳土家族苗族自治县',
+              label: '酉阳县',
               value: 1560
             },
             {
@@ -12405,7 +12405,7 @@ export default {
               value: 1971
             },
             {
-              label: '石柱土家族自治县',
+              label: '石柱县',
               value: 2306
             },
             {
@@ -12957,7 +12957,7 @@ export default {
               value: 1021
             },
             {
-              label: '杜尔伯特蒙古族自治县',
+              label: '杜尔伯特县',
               value: 1023
             },
             {
@@ -13031,7 +13031,7 @@ export default {
               value: 470
             },
             {
-              label: '前郭尔罗斯蒙古族自治县',
+              label: '前郭县',
               value: 473
             },
             {
@@ -13091,7 +13091,7 @@ export default {
           ]
         },
         {
-          label: '延边朝鲜族自治州',
+          label: '延边州',
           value: 54,
           children: [
             {
@@ -13183,7 +13183,7 @@ export default {
               value: 485
             },
             {
-              label: '伊通满族自治县',
+              label: '伊通县',
               value: 491
             },
             {
@@ -13217,7 +13217,7 @@ export default {
               value: 505
             },
             {
-              label: '长白朝鲜族自治县',
+              label: '长白县',
               value: 508
             },
             {
@@ -13359,7 +13359,7 @@ export default {
               value: 515
             },
             {
-              label: '阜新蒙古族自治县',
+              label: '阜新县',
               value: 522
             },
             {
@@ -13503,7 +13503,7 @@ export default {
           value: 184,
           children: [
             {
-              label: '清原满族自治县',
+              label: '清原县',
               value: 1044
             },
             {
@@ -13511,7 +13511,7 @@ export default {
               value: 1526
             },
             {
-              label: '新宾满族自治县',
+              label: '新宾县',
               value: 1948
             },
             {
@@ -13537,11 +13537,11 @@ export default {
           value: 227,
           children: [
             {
-              label: '本溪满族自治县',
+              label: '本溪县',
               value: 1363
             },
             {
-              label: '桓仁满族自治县',
+              label: '桓仁县',
               value: 1938
             },
             {
@@ -13593,7 +13593,7 @@ export default {
               value: 520
             },
             {
-              label: '喀喇沁左翼蒙古族自治县',
+              label: '喀左县',
               value: 1365
             },
             {
@@ -13661,7 +13661,7 @@ export default {
               value: 1784
             },
             {
-              label: '宽甸满族自治县',
+              label: '宽甸县',
               value: 2587
             },
             {
@@ -13721,7 +13721,7 @@ export default {
               value: 2295
             },
             {
-              label: '岫岩满族自治县',
+              label: '岫岩县',
               value: 2441
             },
             {
