@@ -9,6 +9,7 @@ import axios from 'axios'
 import api from './api'
 import utils from './assets/utils'
 import iViewex from '@/components/iviewex'
+import IEcharts from 'vue-echarts-v3/src/full'
 import 'iview/dist/styles/iview.css'
 import './assets/css/main.scss'
 
@@ -16,6 +17,7 @@ Vue.config.productionTip = false
 
 iViewex.Message.config({ duration: 2.2 })
 Vue.use(iViewex)
+Vue.component('IEcharts', IEcharts)
 
 if (typeof process.env.API_PATH !== 'undefined') {
   axios.defaults.baseURL = window.location.protocol + process.env.API_PATH
