@@ -8,16 +8,16 @@ import store from './store'
 import axios from 'axios'
 import api from './api'
 import utils from './utils'
-import iViewex from '@/components/iviewex'
+import Mui from '@/components/_mui'
 import IEcharts from 'vue-echarts-v3/src/lite'
-import './assets/utils/echarts-lite'
+import './utils/echarts-lite'
 import 'iview/dist/styles/iview.css'
 import './assets/css/main.scss'
 
 Vue.config.productionTip = false
 
-iViewex.Message.config({ duration: 2.2 })
-Vue.use(iViewex)
+Mui.Message.config({ duration: 2.2 })
+Vue.use(Mui)
 
 Vue.component('IEcharts', IEcharts)
 
@@ -27,17 +27,17 @@ if (typeof process.env.API_PATH !== 'undefined') {
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8'
 // axios 拦截器，设置进度条
 axios.interceptors.request.use(function (config) {
-  iViewex.LoadingBar.start()
+  Mui.LoadingBar.start()
   return config
 }, function (error) {
-  iViewex.LoadingBar.error()
+  Mui.LoadingBar.error()
   return Promise.reject(error)
 })
 axios.interceptors.response.use(function (response) {
-  iViewex.LoadingBar.finish()
+  Mui.LoadingBar.finish()
   return response
 }, function (error) {
-  iViewex.LoadingBar.error()
+  Mui.LoadingBar.error()
   return Promise.reject(error)
 })
 

@@ -45,7 +45,7 @@ import { Row, Col } from 'iview/src/components/grid'
 import { Select, Option, OptionGroup } from 'iview/src/components/select'
 import locale from 'iview/src/locale'
 
-const iviewex = {
+const mui = {
   // Affix,
   // Alert,
   // BackTop,
@@ -123,8 +123,8 @@ const install = function (Vue, opts = {}) {
   locale.use(opts.locale)
   locale.i18n(opts.i18n)
 
-  Object.keys(iviewex).forEach((key) => {
-    Vue.component(key, iviewex[key])
+  Object.keys(mui).forEach((key) => {
+    Vue.component(key, mui[key])
   })
 
   Vue.prototype.$Loading = LoadingBar
@@ -138,4 +138,4 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-export default Object.assign(iviewex, {install})   // eslint-disable-line no-undef
+export default Object.assign(mui, {install})   // eslint-disable-line no-undef
