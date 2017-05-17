@@ -1,6 +1,6 @@
 import user from './user'
 import stats from './stats'
-import utils from '../assets/utils'
+import utils from '../utils'
 
 export default {
   user,

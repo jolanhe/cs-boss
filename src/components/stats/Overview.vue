@@ -14,8 +14,8 @@
               <Row type="flex" class="col-gap2">
                 <Col class="font0">
                   <Radio-group v-model="button1" type="button">
-                    <Radio label="昨天"></Radio>
                     <Radio label="今天"></Radio>
+                    <Radio label="昨天"></Radio>
                     <Radio label="最近7天"></Radio>
                     <Radio label="最近30天"></Radio>
                   </Radio-group>

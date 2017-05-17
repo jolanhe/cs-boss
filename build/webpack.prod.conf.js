@@ -28,7 +28,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
-  plugins:  [
+  plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     wpdp,
     new webpack.optimize.UglifyJsPlugin({
