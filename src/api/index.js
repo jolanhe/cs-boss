@@ -1,8 +1,10 @@
 import user from './user'
+import stats from './stats'
 import utils from '../assets/utils'
 
 export default {
   user,
+  stats,
   params (user) {
     return {
       uid: user.uid || '',

@@ -31,7 +31,7 @@
     </Card>
     <div class="marg1">
       <Card shadow class="marg3">
-        <IEcharts :option="bar" style="height: 400px;"></IEcharts>
+        <IEcharts :option="bar" style="height: 400px;" resizable></IEcharts>
       </Card>
       <Row :gutter="24">
         <Col :lg="12">
@@ -56,7 +56,7 @@
 </template>
 
 <script>
-// import 'echarts/lib/chart/bar'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Overview',
@@ -82,19 +82,35 @@ export default {
       }
     }
   },
+  created () {
+    // this.fetchData()
+  },
+  computed: {
+    ...mapState({
+      user: state => state.user.props
+    })
+  },
   methods: {
     handleChange (value, selectedData) {
       // this.text = selectedData.map(o => o.label).join(', ')
       // console.log(selectedData)
     },
-    doRandom () {
-      const that = this
-      let data = []
-      for (let i = 0, min = 5, max = 99; i < 6; i++) {
-        data.push(Math.floor(Math.random() * (max + 1 - min) + min))
-      }
-      that.loading = !that.loading
-      that.bar.series[0].data = data
+    fetchData () {
+      this.$axios.all([
+        this.$api.stats.queryOrderTotal(JSON.stringify({start: '20170102', end: '20170501', citycode: '340'}), this.$api.params(this.user))
+      ])
+      .then(this.$axios.spread(({ data }) => {
+        switch (data.status_code) {
+          case 0:
+            console.log(data)
+            break
+          default:
+            this.$store.commit('ERROR_RESPONSE_HANDLER', data)
+        }
+      }))
+      .catch(reason => {
+        this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
+      })
     }
   }
 }
