@@ -43,7 +43,6 @@ import Tooltip from 'iview/src/components/tooltip'
 // import Upload from 'iview/src/components/upload'
 import { Row, Col } from 'iview/src/components/grid'
 import { Select, Option, OptionGroup } from 'iview/src/components/select'
-import locale from 'iview/src/locale'
 
 const mui = {
   // Affix,
@@ -120,17 +119,14 @@ const mui = {
 }
 
 const install = function (Vue, opts = {}) {
-  locale.use(opts.locale)
-  locale.i18n(opts.i18n)
-
   Object.keys(mui).forEach((key) => {
     Vue.component(key, mui[key])
   })
 
-  Vue.prototype.$Loading = LoadingBar
-  Vue.prototype.$Message = Message
-  Vue.prototype.$Modal = Modal
-  // Vue.prototype.$Notice = Notice
+  Object.defineProperty(Vue.prototype, '$Loading', { value: LoadingBar })
+  Object.defineProperty(Vue.prototype, '$Message', { value: Message })
+  Object.defineProperty(Vue.prototype, '$Modal', { value: Modal })
+  // Object.defineProperty(Vue.prototype, '$Notice', { value: Notice })
 }
 
 // auto install
