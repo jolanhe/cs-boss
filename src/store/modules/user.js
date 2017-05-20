@@ -5,14 +5,14 @@ import * as types from '../mutation-types'
 export default {
   state: {
     props: JSON.parse(localStorage.getItem('csu')) || {},
-    // 存储 http 请求的响应结果，或作为请求失败的（网络）错误信息的中转
-    result: {}
+    loginResult: {},
+    logoutResult: {}
   },
   mutations: {
     // 登录 mutation
     [types.LOGIN_SUCCESS] (state, data) {
       state.props = data.data
-      state.result = {
+      state.loginResult = {
         status_code: data.status_code,
         status_txt: data.status_txt
       }
@@ -20,19 +20,19 @@ export default {
       localStorage.setItem('csu', JSON.stringify(data.data))
     },
     [types.LOGIN_FAILED] (state, error) {
-      state.result = error
+      state.loginResult = error
     },
     // 退出 mutation
     [types.LOGOUT_SUCCESS] (state, data) {
       state.props = {}
-      state.result = {
+      state.logoutResult = {
         status_code: data.status_code,
         status_txt: data.status_txt
       }
       localStorage.clear()
     },
     [types.LOGOUT_FAILED] (state, error) {
-      state.result = error
+      state.logoutResult = error
     },
     // 清楚登录状态 mutation
     [types.CLEAR_LOGIN_STATUS] (state) {

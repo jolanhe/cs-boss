@@ -25,6 +25,7 @@ if (typeof process.env.API_PATH !== 'undefined') {
   axios.defaults.baseURL = window.location.protocol + process.env.API_PATH
 }
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=utf-8'
+axios.defaults.transformRequest = [data => JSON.stringify(data)]
 // axios 拦截器，设置进度条
 axios.interceptors.request.use(function (config) {
   Mui.LoadingBar.start()

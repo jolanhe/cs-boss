@@ -48,7 +48,7 @@ export default {
   methods: {
     fetchData () {
       this.tipe = '加载中...'
-      this.$axios.all([this.$api.user.queryAllRole(JSON.stringify({}), this.$api.params(this.user))])
+      this.$axios.all([this.$api.user.queryAllRole({}, this.$api.params(this.user))])
       .then(this.$axios.spread(({ data }) => {
         switch (data.status_code) {
           case 0:

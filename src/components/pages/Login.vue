@@ -49,12 +49,12 @@ export default {
   },
   computed: {
     ...mapState({
-      result: state => state.user.result
+      loginResult: state => state.user.loginResult
     })
   },
   watch: {
-    result () {
-      const r = this.result
+    loginResult () {
+      const r = this.loginResult
       switch (typeof r.status_code !== 'undefined' ? r.status_code : r) {
         case 0:
           this.$Message.success('登录成功！')
@@ -81,11 +81,11 @@ export default {
       this.$refs[name].validate((valid) => {
         if (valid) {
           const f = this.formInline
-          const account = JSON.stringify({
+          const account = {
             account: f.account.trim(),
             password: this.$utils.sha1(f.account.trim() + '@user@' + f.password),
             code: f.code
-          })
+          }
           this.login(account)
         } else {
           this.$Message.error('输入信息格式有误！')

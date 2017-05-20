@@ -47,7 +47,7 @@ export default {
   },
   computed: {
     ...mapState({
-      result: state => state.user.result
+      logoutResult: state => state.user.logoutResult
     }),
     ...mapGetters([
       'userProps'
@@ -57,8 +57,8 @@ export default {
     }
   },
   watch: {
-    result () {
-      const r = this.result
+    logoutResult () {
+      const r = this.logoutResult
       switch (typeof r.status_code !== 'undefined' ? r.status_code : r) {
         case 0:
           this.$Message.success('退出成功！')
@@ -79,11 +79,11 @@ export default {
         return
       }
       this.exiting = true
-      this.logout(JSON.stringify({
+      this.logout({
         uid: this.userProps.uid,
         account: this.userProps.account,
         token: this.userProps.token
-      }))
+      })
     },
     routeDispatch (name) {
       this.$router.push(name)

@@ -17,13 +17,13 @@
 <script>
 export default {
   computed: {
-    result () {
-      return this.$store.state.common.result
+    errResult () {
+      return this.$store.state.common.errResult
     }
   },
   watch: {
-    result () {
-      const r = this.result
+    errResult () {
+      const r = this.errResult
       switch (typeof r.status_code !== 'undefined' ? r.status_code : r) {
         case 0: break
         case 1004:

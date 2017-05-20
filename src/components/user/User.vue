@@ -125,7 +125,7 @@ export default {
   methods: {
     fetchData () {
       this.tipe = '加载中...'
-      this.$axios.all([this.$api.user.queryAllUser(JSON.stringify({}), this.$api.params(this.user))])
+      this.$axios.all([this.$api.user.queryAllUser({}, this.$api.params(this.user))])
       .then(this.$axios.spread(({ data }) => {
         switch (data.status_code) {
           case 0:
@@ -151,11 +151,11 @@ export default {
       this.$refs[name].validate((valid) => {
         if (valid) {
           const f = this.formInline
-          const account = JSON.stringify({
+          const account = {
             account: f.account.trim(),
             password: this.$utils.sha1(f.account.trim() + '@user@' + f.password),
             email: this.email
-          })
+          }
 
           this.$axios.all([this.$api.user.addUser(account, this.$api.params(this.user))])
           .then(this.$axios.spread(({ data }) => {
@@ -207,9 +207,8 @@ export default {
         return
       }
       this.modalLoading = true
-      const u = JSON.stringify({ uid })
 
-      this.$axios.all([this.$api.user.removeUser(u, this.$api.params(this.user))])
+      this.$axios.all([this.$api.user.removeUser({ uid }, this.$api.params(this.user))])
       .then(this.$axios.spread(({ data }) => {
         this.removeUserModal = false
         switch (data.status_code) {

@@ -97,7 +97,7 @@ export default {
     },
     fetchData () {
       this.$axios.all([
-        this.$api.stats.queryOrderTotal(JSON.stringify({start: '20170102', end: '20170501', citycode: '340'}), this.$api.params(this.user))
+        this.$api.stats.queryOrderTotal({start: '20170102', end: '20170501', citycode: '340'}, this.$api.params(this.user))
       ])
       .then(this.$axios.spread(({ data }) => {
         switch (data.status_code) {
