@@ -44,26 +44,26 @@ export default {
     // 登录 action
     login ({ commit, state }, account) {
       axios.all([api.user.login(account, api.params(state.props))])
-      .then(axios.spread(function ({ data }) {
-        data.status_code === 0
-          ? commit(types.LOGIN_SUCCESS, data)
-          : commit(types.LOGIN_FAILED, data)
-      }))
-      .catch(function (reason) {
-        commit(types.LOGIN_FAILED, reason)
-      })
+        .then(axios.spread(function ({ data }) {
+          data.status_code === 0
+            ? commit(types.LOGIN_SUCCESS, data)
+            : commit(types.LOGIN_FAILED, data)
+        }))
+        .catch(function (reason) {
+          commit(types.LOGIN_FAILED, reason)
+        })
     },
     // 退出 action
     logout ({ commit, state }, account) {
       axios.all([api.user.logout(account, api.params(state.props))])
-      .then(axios.spread(function ({ data }) {
-        data.status_code === 0
-          ? commit(types.LOGOUT_SUCCESS, data)
-          : commit(types.LOGOUT_FAILED, data)
-      }))
-      .catch(function (reason) {
-        commit(types.LOGOUT_FAILED, reason)
-      })
+        .then(axios.spread(function ({ data }) {
+          data.status_code === 0
+            ? commit(types.LOGOUT_SUCCESS, data)
+            : commit(types.LOGOUT_FAILED, data)
+        }))
+        .catch(function (reason) {
+          commit(types.LOGOUT_FAILED, reason)
+        })
     }
   }
 }

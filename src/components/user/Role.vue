@@ -49,24 +49,24 @@ export default {
     fetchData () {
       this.tipe = '加载中...'
       this.$axios.all([this.$api.user.queryAllRole({}, this.$api.params(this.user))])
-      .then(this.$axios.spread(({ data }) => {
-        switch (data.status_code) {
-          case 0:
-            if (data.data && data.data.length !== 0) {
-              this.grid = data.data
-            } else {
-              this.tipe = '暂无数据'
-            }
-            break
-          default:
-            this.tipe = '获取失败'
-            this.$store.commit('ERROR_RESPONSE_HANDLER', data)
-        }
-      }))
-      .catch(reason => {
-        this.tipe = '获取失败'
-        this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
-      })
+        .then(this.$axios.spread(({ data }) => {
+          switch (data.status_code) {
+            case 0:
+              if (data.data && data.data.length !== 0) {
+                this.grid = data.data
+              } else {
+                this.tipe = '暂无数据'
+              }
+              break
+            default:
+              this.tipe = '获取失败'
+              this.$store.commit('ERROR_RESPONSE_HANDLER', data)
+          }
+        }))
+        .catch(reason => {
+          this.tipe = '获取失败'
+          this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
+        })
     }
   },
   watch: {

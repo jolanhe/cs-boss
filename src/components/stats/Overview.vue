@@ -98,8 +98,7 @@ export default {
     fetchData () {
       this.$axios.all([
         this.$api.stats.queryOrderTotal({start: '20170102', end: '20170501', citycode: '340'}, this.$api.params(this.user))
-      ])
-      .then(this.$axios.spread(({ data }) => {
+      ]).then(this.$axios.spread(({ data }) => {
         switch (data.status_code) {
           case 0:
             console.log(data)
@@ -107,8 +106,7 @@ export default {
           default:
             this.$store.commit('ERROR_RESPONSE_HANDLER', data)
         }
-      }))
-      .catch(reason => {
+      })).catch(reason => {
         this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
       })
     }

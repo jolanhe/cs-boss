@@ -63,6 +63,7 @@ export default {
   sha1,
   rules,
   city,
+
   generateChainID () {
     const chain = Math.random() + ''
     return md5(chain)

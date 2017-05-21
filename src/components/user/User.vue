@@ -126,24 +126,24 @@ export default {
     fetchData () {
       this.tipe = '加载中...'
       this.$axios.all([this.$api.user.queryAllUser({}, this.$api.params(this.user))])
-      .then(this.$axios.spread(({ data }) => {
-        switch (data.status_code) {
-          case 0:
-            if (data.data && data.data.length !== 0) {
-              this.grid = data.data
-            } else {
-              this.tipe = '暂无数据'
-            }
-            break
-          default:
-            this.tipe = '获取失败'
-            this.$store.commit('ERROR_RESPONSE_HANDLER', data)
-        }
-      }))
-      .catch(reason => {
-        this.tipe = '获取失败'
-        this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
-      })
+        .then(this.$axios.spread(({ data }) => {
+          switch (data.status_code) {
+            case 0:
+              if (data.data && data.data.length !== 0) {
+                this.grid = data.data
+              } else {
+                this.tipe = '暂无数据'
+              }
+              break
+            default:
+              this.tipe = '获取失败'
+              this.$store.commit('ERROR_RESPONSE_HANDLER', data)
+          }
+        }))
+        .catch(reason => {
+          this.tipe = '获取失败'
+          this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
+        })
     },
 
     handleAddUser (name) {
@@ -158,31 +158,31 @@ export default {
           }
 
           this.$axios.all([this.$api.user.addUser(account, this.$api.params(this.user))])
-          .then(this.$axios.spread(({ data }) => {
-            switch (data.status_code) {
-              case 0:
-                this.addUserModal = false
-                this.$Message.success('添加成功！')
-                this.modalLoading = false
-                if (data.data) {
-                  this.grid.unshift({
-                    uid: data.data.uid || '',
-                    account: f.account,
-                    email: this.email,
-                    create_time: data.data.create_time || ''
-                  })
-                }
-                this.$refs[name].resetFields()
-                break
-              default:
-                this.$store.commit('ERROR_RESPONSE_HANDLER', data)
-                this.modalLoading = false
-            }
-          }))
-          .catch(reason => {
-            this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
-            this.modalLoading = false
-          })
+            .then(this.$axios.spread(({ data }) => {
+              switch (data.status_code) {
+                case 0:
+                  this.addUserModal = false
+                  this.$Message.success('添加成功！')
+                  this.modalLoading = false
+                  if (data.data) {
+                    this.grid.unshift({
+                      uid: data.data.uid || '',
+                      account: f.account,
+                      email: this.email,
+                      create_time: data.data.create_time || ''
+                    })
+                  }
+                  this.$refs[name].resetFields()
+                  break
+                default:
+                  this.$store.commit('ERROR_RESPONSE_HANDLER', data)
+                  this.modalLoading = false
+              }
+            }))
+            .catch(reason => {
+              this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
+              this.modalLoading = false
+            })
         } else {
           this.$Message.error('输入信息格式有误！')
           this.modalLoading = false
@@ -209,28 +209,28 @@ export default {
       this.modalLoading = true
 
       this.$axios.all([this.$api.user.removeUser({ uid }, this.$api.params(this.user))])
-      .then(this.$axios.spread(({ data }) => {
-        this.removeUserModal = false
-        switch (data.status_code) {
-          case 0:
-            this.$Message.success(data.status_txt)
-            this.grid.splice(index, 1)
-            this.modalLoading = false
-            break
-          case 1002:
-            this.$Message.error(data.status_txt)
-            this.grid.splice(index, 1)
-            this.modalLoading = false
-            break
-          default:
-            this.$store.commit('ERROR_RESPONSE_HANDLER', data)
-            this.modalLoading = false
-        }
-      }))
-      .catch(reason => {
-        this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
-        this.modalLoading = false
-      })
+        .then(this.$axios.spread(({ data }) => {
+          this.removeUserModal = false
+          switch (data.status_code) {
+            case 0:
+              this.$Message.success(data.status_txt)
+              this.grid.splice(index, 1)
+              this.modalLoading = false
+              break
+            case 1002:
+              this.$Message.error(data.status_txt)
+              this.grid.splice(index, 1)
+              this.modalLoading = false
+              break
+            default:
+              this.$store.commit('ERROR_RESPONSE_HANDLER', data)
+              this.modalLoading = false
+          }
+        }))
+        .catch(reason => {
+          this.$store.commit('ERROR_RESPONSE_HANDLER', reason)
+          this.modalLoading = false
+        })
     }
   }
 }
